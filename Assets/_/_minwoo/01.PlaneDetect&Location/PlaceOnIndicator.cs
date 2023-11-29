@@ -8,6 +8,7 @@ using UnityEngine.XR.ARSubsystems;
 
 public class PlaceOnIndicator : MonoBehaviour
 {
+    public static Pose currentAim;
     [SerializeField] GameObject placementIndicator;
     [SerializeField] GameObject placePrefab;
 
@@ -37,6 +38,7 @@ public class PlaceOnIndicator : MonoBehaviour
         if(raycastManager.Raycast(new Vector2(Screen.width/ 2, Screen.height /2), hits, TrackableType.PlaneWithinPolygon))
         {
             var hitPose = hits[0].pose;
+            currentAim = hitPose;
             placementIndicator.transform.SetPositionAndRotation(hitPose.position, hitPose.rotation);
 
             if(!placementIndicator.activeInHierarchy)
