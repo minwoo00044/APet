@@ -14,7 +14,6 @@ namespace Ursaanimation.CubicFarmAnimals
         public string sittostandAnimation = "sit_to_stand";
         public string standtositAnimation = "stand_to_sit";
         public string eatingAnimation = "GoatSheep_eating";
-        //public string idleAnimation = ""
 
         void Start()
         {

@@ -17,7 +17,7 @@ public class Feed : MonoBehaviour
         feedButton.onClick.AddListener(MoveToTargetFood);
     }
 
-    void MoveToTargetFood()
+    public void MoveToTargetFood()
     {
         targetFood = GameObject.FindGameObjectWithTag("food");
         if (targetFood != null)
@@ -36,10 +36,9 @@ public class Feed : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
             yield return null;
         }
-
         animationController.animator.Play(animationController.walkForwardAnimation);
-
-        Vector3 targetPosition = new Vector3(target.position.x, transform.position.y, target.position.z); // YÃà °íÁ¤
+        float stoppingDistance = 0.65f;
+        Vector3 targetPosition = new Vector3(target.position.x, transform.position.y, target.position.z) - transform.forward * stoppingDistance;
         while (Vector3.Distance(transform.position, targetPosition) > 0.05f)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
@@ -47,6 +46,6 @@ public class Feed : MonoBehaviour
         }
 
         animationController.animator.Play(animationController.eatingAnimation);
-        Destroy(target.gameObject, 3f);
+        Destroy(target.gameObject, 4f);
     }
 }
