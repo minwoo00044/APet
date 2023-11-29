@@ -13,6 +13,8 @@ namespace Ursaanimation.CubicFarmAnimals
         public string trotAnimation = "trot_forward";
         public string sittostandAnimation = "sit_to_stand";
         public string standtositAnimation = "stand_to_sit";
+        public string eatingAnimation = "GoatSheep_eating";
+        //public string idleAnimation = ""
 
         void Start()
         {
@@ -21,6 +23,10 @@ namespace Ursaanimation.CubicFarmAnimals
 
         void Update()
         {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                animator.Play(eatingAnimation);
+            }
             if (Input.GetKeyDown(KeyCode.W))
             {
                 animator.Play(walkForwardAnimation);
