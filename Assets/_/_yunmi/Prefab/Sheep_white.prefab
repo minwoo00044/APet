@@ -2146,9 +2146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b15a53248b596b248b3a14fdefbc547f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   feedButton: {fileID: 0}
-  animationController: {fileID: 8185963723970810582}
+  ballButton: {fileID: 0}
 --- !u!1 &8185963724001097088
 GameObject:
   m_ObjectHideFlags: 0

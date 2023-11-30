@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,14 +8,64 @@ using Ursaanimation.CubicFarmAnimals;
 
 public class Feed : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 1f;
     private GameObject targetFood;
+    private GameObject targetBall;
     public Button feedButton;
-    public AnimationController animationController;
+    public Button ballButton;
+    private AnimationController animationController;
+    private Vector3 originalPosition;
 
     void Start()
     {
+        originalPosition = transform.position;
+        animationController = GetComponent<AnimationController>();
         feedButton.onClick.AddListener(MoveToTargetFood);
+        ballButton.onClick.AddListener(MoveToTargetBall);
+    }
+
+    public void MoveToTargetBall()
+    {
+        targetBall = GameObject.FindGameObjectWithTag("ball");
+        if (targetBall != null)
+        {
+            StartCoroutine(MoveToBall(targetBall.transform));
+        }
+    }
+    IEnumerator MoveToBall(Transform ball)
+    {
+        yield return new WaitForSeconds(3f);
+
+        animationController.animator.Play(animationController.runForwardAnimation);
+        while (Vector3.Distance(transform.position, ball.position) > 1f)
+        {
+            Vector3 targetDirection = ball.position - transform.position;
+            targetDirection.y = 0;
+            Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
+
+            Vector3 targetPosition = new Vector3(ball.position.x, transform.position.y, ball.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, 5f * Time.deltaTime);
+            yield return null;
+        }
+        animationController.animator.Play(animationController.eatingAnimation);
+        yield return new WaitForSeconds(0.6f);
+
+        animationController.animator.Play(animationController.runForwardAnimation);
+        while (Vector3.Distance(transform.position, originalPosition) > 1f)
+        {
+            Vector3 returnDirection = originalPosition - transform.position;
+            returnDirection.y = 0;
+            Quaternion returnRotation = Quaternion.LookRotation(returnDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, returnRotation, speed * Time.deltaTime);
+
+            Vector3 returnPosition = new Vector3(originalPosition.x, transform.position.y, originalPosition.z);
+            transform.position = Vector3.MoveTowards(transform.position, returnPosition, 5f * Time.deltaTime);
+            yield return null;
+        }
+        animationController.animator.Play(animationController.idleAnimation);
+        yield return null;
+
     }
 
     public void MoveToTargetFood()
@@ -44,7 +95,6 @@ public class Feed : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
             yield return null;
         }
-
         animationController.animator.Play(animationController.eatingAnimation);
         Destroy(target.gameObject, 4f);
     }
