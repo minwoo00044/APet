@@ -2065,7 +2065,7 @@ GameObject:
   - component: {fileID: 8185963723970810568}
   - component: {fileID: 8185963723970810569}
   - component: {fileID: 8185963723970810582}
-  - component: {fileID: 1079473361480327582}
+  - component: {fileID: 7385260253625303699}
   m_Layer: 0
   m_Name: Sheep_white
   m_TagString: Untagged
@@ -2134,7 +2134,7 @@ MonoBehaviour:
   sittostandAnimation: sit_to_stand
   standtositAnimation: stand_to_sit
   eatingAnimation: GoatSheep_eating
---- !u!114 &1079473361480327582
+--- !u!114 &7385260253625303699
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2143,7 +2143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8185963723970810583}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a58f6bc1d420f1540bfc65acd222eeb4, type: 3}
+  m_Script: {fileID: 11500000, guid: b15a53248b596b248b3a14fdefbc547f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
