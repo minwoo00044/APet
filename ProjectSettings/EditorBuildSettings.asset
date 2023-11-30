@@ -4,9 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_/_minwoo/01.PlaneDetect&Location/PlaneDetectScene.unity
+    guid: 9a3a752406b1cd9409301b2a4d821d79
   m_configObjects:
-    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 0379e0f97c112a64ab2a1240950bf102, type: 2}
-    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 9b760ed36cd7cb341820aed6aa40c625, type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: b1912cf835dae3e4393f8dda342f5f1f, type: 2}
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: c3629fd0155e4aa45b854f307a387d3e, type: 2}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: aed47a6977483874f8020b8696608913, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c43977da57845a645b38d8078e0313eb, type: 2}
   m_UseUCBPForAssetBundles: 0
