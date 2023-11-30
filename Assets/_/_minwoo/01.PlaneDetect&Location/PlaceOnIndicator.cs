@@ -30,8 +30,6 @@ public class PlaceOnIndicator : MonoBehaviour
     [SerializeField] TMP_Text logTxt;
     [SerializeField] TMP_Text logTxt1;
     [SerializeField] TMP_Text logTxt2;
-
-
     private List<ARPointCloud> pointClouds;
     private void Awake()
     {
@@ -92,15 +90,26 @@ public class PlaceOnIndicator : MonoBehaviour
                 if (pointDistance < nearestPointDistance)
                 {
                     List<ARRaycastHit> arHits = new List<ARRaycastHit>();
-                    if (arRaycastManager.Raycast(screenCenter, arHits, TrackableType.FeaturePoint))
+                    if (arRaycastManager.Raycast(screenCenter, arHits, TrackableType.FeaturePoint)) // 먼저 특징점을 찾습니다.
                     {
                         ARRaycastHit hit = arHits[0];
                         float distance = Vector3.Distance(hit.pose.position, pointPosition);
-                        if (distance < 1f) // 0.01은 임의로 설정한 값입니다. 실제 어플리케이션에서는 적절한 값을 선택해야 합니다.
+                        if (distance < 1f)
                         {
                             nearestPointDistance = pointDistance;
                             nearestPointPose = hit.pose;
                         }
+                    }
+                    else if (arRaycastManager.Raycast(screenCenter, arHits, TrackableType.Planes)) // 특징점을 찾지 못하면 평면을 찾습니다.
+                    {
+                        ARRaycastHit hit = arHits[0];
+                        nearestPointDistance = pointDistance;
+                        nearestPointPose = hit.pose;
+                    }
+                    else
+                    {
+                        placementIndicator.SetActive(false);
+
                     }
                 }
             }
@@ -108,16 +117,13 @@ public class PlaceOnIndicator : MonoBehaviour
 
         if (nearestPointDistance < float.MaxValue)
         {
-                        logTxt2.text = $"active";
+            logTxt2.text = $"active";
             placementIndicator.transform.position = nearestPointPose.position;
             placementIndicator.SetActive(true);
         }
-        else
-        {
-            placementIndicator.SetActive(false);
-        }
-        //logTxt.text = $"{pointClouds.Count} \n {placementIndicator.activeInHierarchy}";
+
     }
+
 
     private void placeObject()
     {

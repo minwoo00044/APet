@@ -905,6 +905,7 @@ MonoBehaviour:
   logTxt: {fileID: 1333099892}
   logTxt1: {fileID: 849120058}
   logTxt2: {fileID: 1748626830}
+  avatarController: {fileID: 0}
 --- !u!114 &1304420518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1489,7 +1490,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1304420517}
         m_TargetAssemblyTypeName: PlaceOnIndicator, Assembly-CSharp
-        m_MethodName: ToggleState
+        m_MethodName: ReplaceSheep
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1594,7 +1595,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Feed
+  m_text: RePlace
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 592d8d1bba93f284cb50fd281d7e328b, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 592d8d1bba93f284cb50fd281d7e328b, type: 2}
