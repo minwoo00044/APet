@@ -34,7 +34,7 @@ public class PlaceOnIndicator : MonoBehaviour
     private void Awake()
     {
         touchInput.performed += _ => { placeObject(); };
-        placementIndicator.SetActive(false);
+        //placementIndicator.SetActive(false);
         pointClouds = new List<ARPointCloud>();
         pointCloudManager.pointCloudsChanged += OnPointCloudsChanged;
     }
@@ -86,7 +86,6 @@ public class PlaceOnIndicator : MonoBehaviour
             {
                 Vector3 pointPosition = point;
                 float pointDistance = Vector3.Distance(Camera.main.transform.position, pointPosition);
-
                 if (pointDistance < nearestPointDistance)
                 {
                     List<ARRaycastHit> arHits = new List<ARRaycastHit>();
@@ -109,7 +108,6 @@ public class PlaceOnIndicator : MonoBehaviour
                     else
                     {
                         placementIndicator.SetActive(false);
-
                     }
                 }
             }
