@@ -1,0 +1,34 @@
+{
+    "name": "New Controls",
+    "maps": [
+        {
+            "name": "New action map",
+            "id": "67a775b3-22b4-4aca-894a-8b242fb4e1e4",
+            "actions": [
+                {
+                    "name": "Choose",
+                    "type": "PassThrough",
+                    "id": "6c397ca3-e434-4375-970f-2181ab521d23",
+                    "expectedControlType": "Touch",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6cd5c754-e9ec-4b4a-842b-ef4a8c2558e4",
+                    "path": "<Touchscreen>/primaryTouch",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Choose",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
