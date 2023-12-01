@@ -16,8 +16,8 @@ public enum TouchState
 public class PlaceOnIndicator : MonoBehaviour
 {
     public static Pose currentAim;
+    public static GameObject placePrefab;
     [SerializeField] GameObject placementIndicator;
-    [SerializeField] GameObject placePrefab;
     [SerializeField] GameObject sheep;
 
     GameObject spawnedObject;
@@ -167,4 +167,5 @@ public class PlaceOnIndicator : MonoBehaviour
         else
             state = TouchState.sheep;
     }
+
 }
