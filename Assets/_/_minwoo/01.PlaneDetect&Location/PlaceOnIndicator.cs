@@ -22,7 +22,7 @@ public class PlaceOnIndicator : MonoBehaviour
 
     GameObject spawnedObject;
 
-    [SerializeField] InputAction touchInput;
+    //[SerializeField] InputAction touchInput;
     List<ARRaycastHit> hits = new List<ARRaycastHit>();
     TouchState state = TouchState.sheep;
     [SerializeField] ARPointCloudManager pointCloudManager;
@@ -33,19 +33,19 @@ public class PlaceOnIndicator : MonoBehaviour
     private List<ARPointCloud> pointClouds;
     private void Awake()
     {
-        touchInput.started += _ => { placeObject(); };
+        //touchInput.started += _ => { placeObject(); };
         //placementIndicator.SetActive(false);
         pointClouds = new List<ARPointCloud>();
         pointCloudManager.pointCloudsChanged += OnPointCloudsChanged;
     }
-    private void OnEnable()
-    {
-        touchInput.Enable();
-    }
-    private void OnDisable()
-    {
-        touchInput.Disable();
-    }
+    //private void OnEnable()
+    //{
+    //    touchInput.Enable();
+    //}
+    //private void OnDisable()
+    //{
+    //    touchInput.Disable();
+    //}
 
     private void OnPointCloudsChanged(ARPointCloudChangedEventArgs args)
     {
@@ -118,54 +118,54 @@ public class PlaceOnIndicator : MonoBehaviour
             placementIndicator.transform.position = nearestPointPose.position;
             placementIndicator.SetActive(true);
         }
-
+        currentAim = nearestPointPose;
     }
 
+    //TEST
+    //private void placeObject()
+    //{
 
-    private void placeObject()
-    {
+    //    var touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
+    //    var isTouchOverUI = IsPointOverUIObject(touchPosition);
 
-        var touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
-        var isTouchOverUI = IsPointOverUIObject(touchPosition);
+    //    if (isTouchOverUI)
+    //    {
+    //        logTxt1.text = "?";
+    //        // UI 클릭이므로 이후 로직을 중단합니다.
+    //        return;
+    //    }
+    //    if (!placementIndicator.activeInHierarchy)
+    //        return;
+    //    switch (state)
+    //    {
+    //        case TouchState.sheep:
+    //            sheep.transform.position = placementIndicator.transform.position;
+    //            break;
+    //        case TouchState.food:
+    //            spawnedObject = Instantiate(placePrefab, placementIndicator.transform.position, placementIndicator.transform.rotation);
+    //            break;
+    //    }
+    //}
+    //public bool IsPointOverUIObject(Vector2 pos)
+    //{
+    //    if (EventSystem.current == null)
+    //        return false;
 
-        if (isTouchOverUI)
-        {
-            logTxt1.text = "?";
-            // UI 클릭이므로 이후 로직을 중단합니다.
-            return;
-        }
-        if (!placementIndicator.activeInHierarchy)
-            return;
-        switch (state)
-        {
-            case TouchState.sheep:
-                sheep.transform.position = placementIndicator.transform.position;
-                break;
-            case TouchState.food:
-                spawnedObject = Instantiate(placePrefab, placementIndicator.transform.position, placementIndicator.transform.rotation);
-                break;
-        }
-    }
-    public bool IsPointOverUIObject(Vector2 pos)
-    {
-        if (EventSystem.current == null)
-            return false;
+    //    var eventDataCurrentPosition = new PointerEventData(EventSystem.current)
+    //    {
+    //        position = new Vector2(pos.x, pos.y)
+    //    };
 
-        var eventDataCurrentPosition = new PointerEventData(EventSystem.current)
-        {
-            position = new Vector2(pos.x, pos.y)
-        };
-
-        var results = new List<RaycastResult>();
-        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
-        return results.Count > 0;
-    }
-    public void ToggleState()
-    {
-        if (state == TouchState.sheep)
-            state = TouchState.food;
-        else
-            state = TouchState.sheep;
-    }
+    //    var results = new List<RaycastResult>();
+    //    EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+    //    return results.Count > 0;
+    //}
+    //public void ToggleState()
+    //{
+    //    if (state == TouchState.sheep)
+    //        state = TouchState.food;
+    //    else
+    //        state = TouchState.sheep;
+    //}
 
 }
