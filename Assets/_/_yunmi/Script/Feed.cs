@@ -11,8 +11,8 @@ public class Feed : MonoBehaviour
     public float speed = 1f;
     private GameObject targetFood;
     private GameObject targetBall;
-    public Button feedButton;
-    public Button ballButton;
+    //public Button feedButton;
+    //public Button ballButton;
     private AnimationController animationController;
     private Vector3 originalPosition;
 
@@ -20,34 +20,62 @@ public class Feed : MonoBehaviour
     {
         originalPosition = transform.position;
         animationController = GetComponent<AnimationController>();
-        feedButton.onClick.AddListener(MoveToTargetFood);
-        ballButton.onClick.AddListener(MoveToTargetBall);
+        //feedButton.onClick.AddListener(MoveToTargetFood);
+        //ballButton.onClick.AddListener(MoveToTargetBall);
     }
-
-    public void MoveToTargetBall()
+    void Update()
     {
-        targetBall = GameObject.FindGameObjectWithTag("ball");
-        if (targetBall != null)
+        if (targetFood == null)
         {
-            StartCoroutine(MoveToBall(targetBall.transform));
+            targetFood = GameObject.FindGameObjectWithTag("food");
+            if (targetFood != null)
+            {
+                StartCoroutine(MoveTowards(targetFood.transform));
+            }
+        }
+
+        if (targetBall == null)
+        {
+            targetBall = GameObject.FindGameObjectWithTag("ball");
+            if (targetBall != null)
+            {
+                StartCoroutine(MoveToBall(targetBall.transform));
+            }
         }
     }
+
+    //public void MoveToTargetBall()
+    //{
+    //    targetBall = GameObject.FindGameObjectWithTag("ball");
+    //    if (targetBall != null)
+    //    {
+    //        StartCoroutine(MoveToBall(targetBall.transform));
+    //    }
+    //}
     IEnumerator MoveToBall(Transform ball)
     {
-        yield return new WaitForSeconds(3f);
+        //animationController.animator.Play(animationController.turn90LAnimation);
+        Vector3 targetDirection = ball.position - transform.position;
+        targetDirection.y = 0;
+        Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+
+        while (Quaternion.Angle(transform.rotation, targetRotation) > 0.1f)
+        {
+            animationController.animator.Play(animationController.turn90LAnimation);
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
+            yield return null;
+        }
 
         animationController.animator.Play(animationController.runForwardAnimation);
-        while (Vector3.Distance(transform.position, ball.position) > 1f)
-        {
-            Vector3 targetDirection = ball.position - transform.position;
-            targetDirection.y = 0;
-            Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
 
-            Vector3 targetPosition = new Vector3(ball.position.x, transform.position.y, ball.position.z);
+        Vector3 targetPosition = new Vector3(ball.position.x, transform.position.y, ball.position.z);
+        while (Vector3.Distance(transform.position, targetPosition) > 1f)
+        {
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, 5f * Time.deltaTime);
             yield return null;
         }
+
         animationController.animator.Play(animationController.eatingAnimation);
         yield return new WaitForSeconds(0.6f);
 
@@ -68,22 +96,24 @@ public class Feed : MonoBehaviour
 
     }
 
-    public void MoveToTargetFood()
-    {
-        targetFood = GameObject.FindGameObjectWithTag("food");
-        if (targetFood != null)
-        {
-            StartCoroutine(MoveTowards(targetFood.transform));
-        }
-    }
+    //public void MoveToTargetFood()
+    //{
+    //    targetFood = GameObject.FindGameObjectWithTag("food");
+    //    if (targetFood != null)
+    //    {
+    //        StartCoroutine(MoveTowards(targetFood.transform));
+    //    }
+    //}
 
     IEnumerator MoveTowards(Transform target)
     {
-        Vector3 targetDirection = (new Vector3(target.position.x, transform.position.y, target.position.z) - transform.position).normalized;
+        Vector3 targetDirection = target.position - transform.position;
+        targetDirection.y = 0;
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
 
         while (Quaternion.Angle(transform.rotation, targetRotation) > 0.1f)
         {
+            animationController.animator.Play(animationController.turn90LAnimation);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
             yield return null;
         }
