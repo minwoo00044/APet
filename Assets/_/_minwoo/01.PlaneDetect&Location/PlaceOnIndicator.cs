@@ -33,7 +33,7 @@ public class PlaceOnIndicator : MonoBehaviour
     private List<ARPointCloud> pointClouds;
     private void Awake()
     {
-        touchInput.performed += _ => { placeObject(); };
+        touchInput.started += _ => { placeObject(); };
         //placementIndicator.SetActive(false);
         pointClouds = new List<ARPointCloud>();
         pointCloudManager.pointCloudsChanged += OnPointCloudsChanged;
@@ -63,7 +63,6 @@ public class PlaceOnIndicator : MonoBehaviour
             if (index != -1)
             {
                 pointClouds[index] = updated;
-                logTxt1.text = $"{pointClouds.Count}";
             }
         }
 
@@ -125,13 +124,15 @@ public class PlaceOnIndicator : MonoBehaviour
 
     private void placeObject()
     {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == UnityEngine.TouchPhase.Began)
+
+        var touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
+        var isTouchOverUI = IsPointOverUIObject(touchPosition);
+
+        if (isTouchOverUI)
         {
-            if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
-            {
-                // UI 클릭이므로 이후 로직을 중단합니다.
-                return;
-            }
+            logTxt1.text = "?";
+            // UI 클릭이므로 이후 로직을 중단합니다.
+            return;
         }
         if (!placementIndicator.activeInHierarchy)
             return;
@@ -144,6 +145,20 @@ public class PlaceOnIndicator : MonoBehaviour
                 spawnedObject = Instantiate(placePrefab, placementIndicator.transform.position, placementIndicator.transform.rotation);
                 break;
         }
+    }
+    public bool IsPointOverUIObject(Vector2 pos)
+    {
+        if (EventSystem.current == null)
+            return false;
+
+        var eventDataCurrentPosition = new PointerEventData(EventSystem.current)
+        {
+            position = new Vector2(pos.x, pos.y)
+        };
+
+        var results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        return results.Count > 0;
     }
     public void ToggleState()
     {
