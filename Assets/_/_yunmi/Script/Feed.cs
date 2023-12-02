@@ -15,6 +15,8 @@ public class Feed : MonoBehaviour
     //public Button ballButton;
     private AnimationController animationController;
     private Vector3 originalPosition;
+    public Transform petMouth;
+
 
     void Start()
     {
@@ -78,6 +80,13 @@ public class Feed : MonoBehaviour
 
         animationController.animator.Play(animationController.eatingAnimation);
         yield return new WaitForSeconds(0.6f);
+        
+            ball.transform.SetParent(petMouth);
+            ball.transform.localPosition = Vector3.zero;
+            ball.transform.localRotation = Quaternion.identity;
+            //Destroy(ball.gameObject);
+        
+
 
         animationController.animator.Play(animationController.runForwardAnimation);
         while (Vector3.Distance(transform.position, originalPosition) > 1f)
