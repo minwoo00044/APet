@@ -48,8 +48,9 @@ public class PetStatManager : MonoBehaviour
             var hungerKeyPart = parts[2];
             var loveKeyPart = parts[3];
             var cleanKeyPart = parts[4];
+            var healthKeyPart = parts[5];
 
-            var tempPetStat = new PetStat(int.Parse(ageKeyPart), int.Parse(hungerKeyPart), int.Parse(loveKeyPart), int.Parse(cleanKeyPart));
+            var tempPetStat = new PetStat(int.Parse(ageKeyPart), int.Parse(hungerKeyPart), int.Parse(loveKeyPart), int.Parse(cleanKeyPart), int.Parse(healthKeyPart));
 
             NameStatPair.Add(nameKeyPart, tempPetStat);
             print("!");
@@ -65,7 +66,7 @@ public class PetStatManager : MonoBehaviour
             // 각각의 PetStat을 CSV 형식으로 작성합니다.
             foreach (KeyValuePair<string, PetStat> entry in _nameStatPair)
             {
-                sw.WriteLine($"{entry.Key},{entry.Value.Age},{entry.Value.Hunger},{entry.Value.Love},{entry.Value.Clean}");
+                sw.WriteLine($"{entry.Key},{entry.Value.Age},{entry.Value.Hunger},{entry.Value.Love},{entry.Value.Clean},{entry.Value.Health}");
             }
         }
     }
@@ -78,19 +79,20 @@ public class PetStat
     private int _hunger;
     private int _love;
     private int _clean;
+    private int _health;
 
-    public PetStat(int age, int hunger, int love, int clean)
+    public PetStat(int age, int hunger, int love, int clean, int health)
     {
         _age = age;
         _hunger = hunger;
         _love = love;
         _clean = clean;
+        _health = health;
     }
 
     public int Hunger { get => _hunger; set => _hunger = value; }
     public int Love { get => _love; set => _love = value; }
     public int Clean { get => _clean; set => _clean = value; }
     public int Age { get => _age; set => _age = value; }
-
-
+    public int Health { get => _health; set => _health = value; }
 }
