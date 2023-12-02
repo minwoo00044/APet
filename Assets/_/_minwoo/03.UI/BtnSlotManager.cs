@@ -26,11 +26,11 @@ public class BtnSlotManager : MonoBehaviour
                 break;
             }
             btnDataPair.Add(panelChangeBtns[i], panelDatas[i]);
-            panelChangeBtns[i].onClick.AddListener(() => SetUI(panelChangeBtns[idx]));
+            panelChangeBtns[i].onClick.AddListener(() => SetUI(panelChangeBtns[idx], panelDatas[i].type == ObjType.Pet));
             panelChangeBtns[i].GetComponentInChildren<TMP_Text>().text = panelDatas[i].type.ToString();
         }
     }
-    public void SetUI(Button currentClicked)
+    public void SetUI(Button currentClicked, bool isPet)
     {
         foreach(var item in buttons)
         {
@@ -40,9 +40,12 @@ public class BtnSlotManager : MonoBehaviour
 
         for(int i = 0; i< currentData.data.Count; i++)
         {
-            print(buttons.Count);
             buttons[i].gameObject.SetActive(true);
             buttons[i].GetComponentsInChildren<Image>()[1].sprite = currentData.data[i].icon;
+            if (isPet)
+                buttons[i].onClick.AddListener(() => Debug.Log($"메인 펫 {currentData.data[i].prefab.name}으로 체인지"));
+            else
+                buttons[i].onClick.AddListener(() => PlaceOnIndicator.placePrefab = currentData.data[i].prefab);
         }
     }
 }
