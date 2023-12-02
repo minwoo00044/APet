@@ -17,7 +17,7 @@ namespace Ursaanimation.CubicFarmAnimals
         public string idleAnimation = "GoatSheep_idle";
         public string danceAnimation = "dance";
 
-        public bool dancing = false;
+        
         void Start()
         {
             animator = GetComponent<Animator>();
@@ -57,10 +57,7 @@ namespace Ursaanimation.CubicFarmAnimals
             {
                 animator.Play(standtositAnimation);
             }
-            if (dancing)
-            {
-                transform.position = new Vector3(transform.position.x, 0.75f, transform.position.z);
-            }
+            
         }
     }
 }
