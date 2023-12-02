@@ -15,8 +15,8 @@ MonoBehaviour:
   data:
   - name: Sheep
     icon: {fileID: 0}
-    prefab: {fileID: 0}
-  - name: 
+    prefab: {fileID: 1121368238102141770, guid: a390007f70c1594499b5dbefb26ad2d9, type: 3}
+  - name: Tester
     icon: {fileID: 0}
-    prefab: {fileID: 0}
+    prefab: {fileID: 3408818361448841979, guid: 9d518c4f38622344b80032cfbf13789d, type: 3}
   type: 0

@@ -14,6 +14,8 @@ public class PetStatManager : MonoBehaviour
 
     public Dictionary<string, PetStat> NameStatPair { get => _nameStatPair; set => _nameStatPair = value; }
 
+    private Tuple<string, GameObject> _petWithTag = new Tuple<string, GameObject>("", null);
+
     private void Awake()
     {
         if (Instance == null)
@@ -69,6 +71,24 @@ public class PetStatManager : MonoBehaviour
                 sw.WriteLine($"{entry.Key},{entry.Value.Age},{entry.Value.Hunger},{entry.Value.Love},{entry.Value.Clean},{entry.Value.Health}");
             }
         }
+    }
+
+    public void ChangePet(string name, GameObject prefab)
+
+    {
+        GameObject instance;
+        if (_petWithTag.Item1 != string.Empty)
+        {
+            if (name == _petWithTag.Item1)
+                return;
+            instance = Instantiate(prefab, _petWithTag.Item2.transform.position, Quaternion.identity);
+        }
+        else
+        {
+            instance = Instantiate(prefab);
+        }
+        Destroy(_petWithTag.Item2);
+        _petWithTag = new Tuple<string, GameObject>(name, instance);
     }
 
 }
