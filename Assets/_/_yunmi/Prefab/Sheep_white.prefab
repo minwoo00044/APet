@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1903898849279382362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3237747673474081389}
+  m_Layer: 0
+  m_Name: petMouth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3237747673474081389
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903898849279382362}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.876, z: 0.95}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8185963723970810568}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8185963722801152572
 GameObject:
   m_ObjectHideFlags: 0
@@ -2088,6 +2119,7 @@ Transform:
   m_Children:
   - {fileID: 8185963724566777240}
   - {fileID: 8185963723261686823}
+  - {fileID: 3237747673474081389}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &8185963723970810569
@@ -2134,6 +2166,8 @@ MonoBehaviour:
   sittostandAnimation: sit_to_stand
   standtositAnimation: stand_to_sit
   eatingAnimation: GoatSheep_eating
+  idleAnimation: GoatSheep_idle
+  danceAnimation: dance
 --- !u!114 &7385260253625303699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2146,9 +2180,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b15a53248b596b248b3a14fdefbc547f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  feedButton: {fileID: 0}
+  speed: 1
   ballButton: {fileID: 0}
+  petMouth: {fileID: 3237747673474081389}
 --- !u!1 &8185963724001097088
 GameObject:
   m_ObjectHideFlags: 0

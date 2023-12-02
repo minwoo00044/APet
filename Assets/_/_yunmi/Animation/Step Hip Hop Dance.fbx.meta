@@ -1,0 +1,1066 @@
+fileFormatVersion: 2
+guid: 546cbffcdaed93f4fb3bcbe715707691
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: mixamo.com
+      takeName: mixamo.com
+      internalID: -203655887218126122
+      firstFrame: 0
+      lastFrame: 234
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 1
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: SK_Goat_Sheep(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Goat_White
+      parentName: SK_Goat_Sheep(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite1
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite2
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite3
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite4
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite5
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite6
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite7
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite8
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite9
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite10
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite11
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite12
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite13
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite14
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite15
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite16
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite17
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite18
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite19
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite20
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite21
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite22
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite23
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite24
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite25
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite26
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite27
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite28
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite29
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite30
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite31
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite32
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite33
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite34
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatWhite35
+      parentName: Goat_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Goat_Dark
+      parentName: SK_Goat_Sheep(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark1
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark2
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark3
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark4
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark5
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark6
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark7
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark8
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark9
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark10
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark11
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark12
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark13
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark14
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark15
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark16
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark17
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark18
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark19
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark20
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark21
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark22
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark23
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark24
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark25
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark26
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark27
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark28
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark29
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark30
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark31
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark32
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark33
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark34
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GoatDark35
+      parentName: Goat_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sheep_White
+      parentName: SK_Goat_Sheep(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite1
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite2
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite3
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite4
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite5
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite6
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite7
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite8
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite9
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite10
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite11
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite12
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite13
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite14
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite15
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite16
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite17
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite18
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite19
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite20
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite21
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite22
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite23
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepWhite24
+      parentName: Sheep_White
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sheep_Dark
+      parentName: SK_Goat_Sheep(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark1
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark2
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark3
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark4
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark5
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark6
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark7
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark8
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark9
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark10
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark11
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark12
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark13
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark14
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark15
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark16
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark17
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark18
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark19
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark20
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark21
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark22
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark23
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepDark24
+      parentName: Sheep_Dark
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sheep_Cream
+      parentName: SK_Goat_Sheep(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream1
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream2
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream3
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream4
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream5
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream6
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream7
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream8
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream9
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream10
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream11
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream12
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream13
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream14
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream15
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream16
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream17
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream18
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream19
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream20
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream21
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream22
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream23
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SheepCream24
+      parentName: Sheep_Cream
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_joint
+      parentName: SK_Goat_Sheep(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Root_joint
+      parentName: Base_joint
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Pelvis_joint
+      parentName: Root_joint
+      position: {x: -8.077936e-30, y: 0.59454405, z: -0.030346096}
+      rotation: {x: -0.5177781, y: 0.4815661, z: 0.51777804, w: -0.48156613}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000002}
+    - name: Rump_L_joint
+      parentName: Pelvis_joint
+      position: {x: -0.001756546, y: 0.030298412, z: 0.15132499}
+      rotation: {x: 0.97436184, y: 0.22324437, z: 0.02275461, w: -0.016223937}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1}
+    - name: Hip_L_joint
+      parentName: Rump_L_joint
+      position: {x: 0.18566717, y: -2.131628e-15, z: -4.796163e-16}
+      rotation: {x: -0.000000033550176, y: 0.000000042730296, z: 0.17134143, w: 0.98521173}
+      scale: {x: 0.9999997, y: 0.99999994, z: 1}
+    - name: Knee_L_joint
+      parentName: Hip_L_joint
+      position: {x: 0.20973007, y: 3.5527135e-16, z: -0.0000000060832512}
+      rotation: {x: -0.0010864184, y: -0.0043138713, z: 0.06705336, w: -0.9977395}
+      scale: {x: 1.0000011, y: 1.0000012, z: 1.0000006}
+    - name: Ankle_L_joint
+      parentName: Knee_L_joint
+      position: {x: 0.21453512, y: 7.81597e-16, z: -0.00000000397598}
+      rotation: {x: -0.13297457, y: 0.13946612, z: 0.63058996, w: -0.7518133}
+      scale: {x: 0.99999994, y: 1.0000005, z: 1.0000006}
+    - name: Toes_L_joint
+      parentName: Ankle_L_joint
+      position: {x: 0.045703042, y: -0.017214835, z: -9.2976016e-10}
+      rotation: {x: 0.8368966, y: -0.5387283, z: 0.057964697, w: 0.07756342}
+      scale: {x: 1.0000023, y: 1.0000005, z: 1.0000017}
+    - name: breast_M_joint
+      parentName: Pelvis_joint
+      position: {x: -0.069445446, y: 0.24153855, z: 6.28355e-15}
+      rotation: {x: -0, y: -0.000000031664968, z: -0.7490707, w: 0.6624901}
+      scale: {x: 1.0000008, y: 1.0000007, z: 1}
+    - name: mamilla3_R_joint
+      parentName: breast_M_joint
+      position: {x: -0.1075714, y: -0.026561951, z: -0.053258065}
+      rotation: {x: 0.000000020235946, y: 0.00000002551588, z: 0.085804276, w: 0.996312}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000004}
+    - name: mamilla3_L_joint
+      parentName: breast_M_joint
+      position: {x: -0.1075714, y: -0.026561951, z: 0.053258065}
+      rotation: {x: -0.000000025515885, y: 0.000000020235948, z: -0.9963121, w: 0.0858044}
+      scale: {x: 1, y: 1.0000001, z: 1.0000007}
+    - name: Rump_R_joint
+      parentName: Pelvis_joint
+      position: {x: -0.001756546, y: 0.030298412, z: -0.15132499}
+      rotation: {x: 0.22324452, y: -0.97436184, z: 0.016223904, w: 0.022754634}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1}
+    - name: Hip_R_joint
+      parentName: Rump_R_joint
+      position: {x: -0.18566717, y: 1.6342482e-15, z: 7.0521367e-15}
+      rotation: {x: 0.000000029708385, y: -0.000000019013928, z: 0.17134148, w: 0.98521173}
+      scale: {x: 0.99999994, y: 1.0000006, z: 1.0000005}
+    - name: Knee_R_joint
+      parentName: Hip_R_joint
+      position: {x: -0.20973007, y: -2.1316282e-16, z: 0.0000000051055045}
+      rotation: {x: 0.0010862815, y: 0.0043139113, z: -0.06705312, w: 0.99773955}
+      scale: {x: 1.0000004, y: 1.0000006, z: 1}
+    - name: Ankle_R_joint
+      parentName: Knee_R_joint
+      position: {x: -0.21453512, y: -9.947598e-16, z: 0.0000000066976105}
+      rotation: {x: 0.13297462, y: -0.13946617, z: -0.63059014, w: 0.75181323}
+      scale: {x: 1.0000002, y: 1.0000011, z: 1.0000017}
+    - name: Toes_R_joint
+      parentName: Ankle_R_joint
+      position: {x: -0.045703042, y: 0.017214835, z: 0.0000000017960691}
+      rotation: {x: -0.8368966, y: 0.5387283, z: -0.05796457, w: -0.07756326}
+      scale: {x: 1.0000012, y: 1.0000015, z: 1.0000014}
+    - name: Spine1_M_joint
+      parentName: Pelvis_joint
+      position: {x: -0.26782662, y: 2.842171e-16, z: 7.89542e-16}
+      rotation: {x: 0.0000000023283064, y: -0, z: -0.045802392, w: -0.9989506}
+      scale: {x: 1.0000017, y: 1.0000021, z: 1.0000011}
+    - name: Spine2_M_joint
+      parentName: Spine1_M_joint
+      position: {x: -0.24806556, y: -4.2632563e-16, z: -9.82903e-15}
+      rotation: {x: -0.00000000654111, y: -0.000000029961978, z: 0.18374169, w: 0.98297465}
+      scale: {x: 1.0000014, y: 1.000003, z: 1.0000017}
+    - name: RumpFront_L_joint
+      parentName: Spine2_M_joint
+      position: {x: -0.0880957, y: 0.12025171, z: 0.11267812}
+      rotation: {x: -0.67438895, y: -0.42286965, z: -0.5128171, w: 0.32155794}
+      scale: {x: 1.0000007, y: 1.0000006, z: 1.0000007}
+    - name: HipFront_L_joint
+      parentName: RumpFront_L_joint
+      position: {x: 0.18516569, y: -6.0396133e-16, z: -0.0000000011594528}
+      rotation: {x: -0.0045633144, y: -0.10049337, z: 0.012266273, w: -0.9948517}
+      scale: {x: 1.0000025, y: 1.0000029, z: 1.000002}
+    - name: KneeFront_L_joint
+      parentName: HipFront_L_joint
+      position: {x: 0.16031528, y: 4.2632563e-16, z: 5.5904315e-10}
+      rotation: {x: 0.00012155382, y: -0.002997717, z: -0.037993368, w: -0.9992735}
+      scale: {x: 1.0000026, y: 1.0000025, z: 1.0000021}
+    - name: AnkleFront_L_joint
+      parentName: KneeFront_L_joint
+      position: {x: 0.18092243, y: -6.750156e-16, z: 3.7874473e-10}
+      rotation: {x: -0.000019874484, y: 0.007149787, z: -0.11029905, w: -0.9938727}
+      scale: {x: 1.0000033, y: 1.0000036, z: 1.0000037}
+    - name: ToesFront_L_joint
+      parentName: AnkleFront_L_joint
+      position: {x: 0.051082928, y: -0.020104205, z: -1.4104273e-14}
+      rotation: {x: 0.84073997, y: -0.5414391, z: -0.0001454991, w: -0.000017348108}
+      scale: {x: 1.0000035, y: 1.0000007, z: 1.0000043}
+    - name: Neck_M_joint
+      parentName: Spine2_M_joint
+      position: {x: -0.249881, y: 2.842171e-16, z: -1.2045783e-14}
+      rotation: {x: 0.0000000052530322, y: 0.00000006033484, z: -0.041360676, w: -0.9991443}
+      scale: {x: 1.0000017, y: 1.0000024, z: 1.0000013}
+    - name: Neck1_M_joint
+      parentName: Neck_M_joint
+      position: {x: -0.20440915, y: 2.1316282e-16, z: -3.4397197e-15}
+      rotation: {x: 1.4914615e-30, y: -6.490832e-17, z: 0.009655283, w: 0.9999534}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Head_M_joint
+      parentName: Neck1_M_joint
+      position: {x: -0.14511472, y: 3.5527135e-16, z: -1.1839491e-14}
+      rotation: {x: -0.000000036255514, y: -0.00000003606698, z: -0.34018278, w: -0.9403594}
+      scale: {x: 1.000005, y: 1.0000051, z: 1.000005}
+    - name: Eye_R_joint
+      parentName: Head_M_joint
+      position: {x: -0.032805644, y: 0.11863056, z: -0.06426753}
+      rotation: {x: -0.42487657, y: 0.56522554, z: 0.4248766, w: 0.56522554}
+      scale: {x: 0.9999998, y: 1.0000007, z: 0.9999986}
+    - name: Eye_L_joint
+      parentName: Head_M_joint
+      position: {x: -0.032805644, y: 0.11863056, z: 0.07098203}
+      rotation: {x: -0.42487657, y: 0.56522554, z: 0.4248766, w: 0.56522554}
+      scale: {x: 0.9999998, y: 1.0000007, z: 0.9999986}
+    - name: Jaw_M_joint
+      parentName: Head_M_joint
+      position: {x: 0.08857026, y: 0.20342551, z: -4.595259e-14}
+      rotation: {x: 0.000000029276993, y: 0.00000003031854, z: -0.7493002, w: 0.66223055}
+      scale: {x: 1.0000023, y: 1.0000046, z: 1.0000023}
+    - name: Ear1_R_joint
+      parentName: Head_M_joint
+      position: {x: -0.0590593, y: 0.0214121, z: -0.05517532}
+      rotation: {x: -0.63834226, y: 0.37806565, z: -0.32911846, w: -0.5841802}
+      scale: {x: 1.0000036, y: 1.0000001, z: 1.0000045}
+    - name: Ear1_L_joint
+      parentName: Head_M_joint
+      position: {x: -0.0590593, y: 0.0214121, z: 0.05517532}
+      rotation: {x: 0.37806568, y: 0.6383422, z: 0.58418024, w: -0.3291185}
+      scale: {x: 1.0000056, y: 1.0000064, z: 1.0000006}
+    - name: RumpFront_R_joint
+      parentName: Spine2_M_joint
+      position: {x: -0.0880957, y: 0.12025171, z: -0.11267812}
+      rotation: {x: -0.42286965, y: 0.67438895, z: -0.32155794, w: -0.51281697}
+      scale: {x: 1.0000006, y: 1.0000006, z: 1.0000007}
+    - name: HipFront_R_joint
+      parentName: RumpFront_R_joint
+      position: {x: -0.18516569, y: 3.5527135e-16, z: 0.0000000011594586}
+      rotation: {x: 0.0045633893, y: 0.10049351, z: -0.012266363, w: 0.9948517}
+      scale: {x: 1.0000025, y: 1.0000027, z: 1.0000021}
+    - name: KneeFront_R_joint
+      parentName: HipFront_R_joint
+      position: {x: -0.16031528, y: -2.1316282e-16, z: -5.590373e-10}
+      rotation: {x: -0.00012155803, y: 0.0029976727, z: 0.037993357, w: 0.99927354}
+      scale: {x: 1.000003, y: 1.0000031, z: 1.0000024}
+    - name: AnkleFront_R_joint
+      parentName: KneeFront_R_joint
+      position: {x: -0.18092243, y: 6.750156e-16, z: -3.7876147e-10}
+      rotation: {x: 0.000019859108, y: -0.0071497126, z: 0.11029855, w: 0.9938728}
+      scale: {x: 1.0000033, y: 1.0000032, z: 1.0000032}
+    - name: ToesFront_R_joint
+      parentName: AnkleFront_R_joint
+      position: {x: -0.051082928, y: 0.020104205, z: 1.3162804e-14}
+      rotation: {x: 0.8407401, y: -0.54143906, z: -0.00014547743, w: -0.000017339702}
+      scale: {x: 1.000003, y: 1.0000056, z: 1.0000035}
+    - name: Tail0_M_joint
+      parentName: Pelvis_joint
+      position: {x: 0.13572764, y: -0.047131248, z: -1.4273774e-15}
+      rotation: {x: -0.21766976, y: -0.9760225, z: -0, w: -0.000000058673322}
+      scale: {x: 1, y: 0.99999934, z: 1}
+    - name: Tail1_M_joint
+      parentName: Tail0_M_joint
+      position: {x: -0.06677273, y: -4.2632563e-16, z: -3.7284696e-15}
+      rotation: {x: 0.000000011710803, y: -0.00000003238903, z: 0.31496626, w: 0.9491028}
+      scale: {x: 1, y: 1.0000001, z: 0.9999999}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: Root_joint
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 37ab5ee15ddf4eb4d85c2d2b26fc8276, type: 3}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 2
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

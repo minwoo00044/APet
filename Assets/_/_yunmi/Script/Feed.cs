@@ -12,18 +12,18 @@ public class Feed : MonoBehaviour
     private GameObject targetFood;
     private GameObject targetBall;
     //public Button feedButton;
-    //public Button ballButton;
+    public Button ballButton;
     private AnimationController animationController;
     private Vector3 originalPosition;
     public Transform petMouth;
-
+    public bool dancing = false;
 
     void Start()
     {
         originalPosition = transform.position;
         animationController = GetComponent<AnimationController>();
         //feedButton.onClick.AddListener(MoveToTargetFood);
-        //ballButton.onClick.AddListener(MoveToTargetBall);
+        ballButton.onClick.AddListener(DanceAnimation);
     }
     void Update()
     {
@@ -45,15 +45,21 @@ public class Feed : MonoBehaviour
             }
         }
     }
+    public void DanceAnimation()
+    {
+        StartCoroutine(DanceRoutine());
+    }
+    IEnumerator DanceRoutine()
+    {
+        dancing = true;
+        animationController.animator.Play(animationController.danceAnimation);
+        transform.position += new Vector3(0, 0.75f, 0);
 
-    //public void MoveToTargetBall()
-    //{
-    //    targetBall = GameObject.FindGameObjectWithTag("ball");
-    //    if (targetBall != null)
-    //    {
-    //        StartCoroutine(MoveToBall(targetBall.transform));
-    //    }
-    //}
+        yield return new WaitForSeconds(7);
+        animationController.animator.Play(animationController.idleAnimation);
+        dancing = false;
+        transform.position = originalPosition;
+    }
     IEnumerator MoveToBall(Transform ball)
     {
         //animationController.animator.Play(animationController.turn90LAnimation);
@@ -80,12 +86,12 @@ public class Feed : MonoBehaviour
 
         animationController.animator.Play(animationController.eatingAnimation);
         yield return new WaitForSeconds(0.6f);
-        
-            ball.transform.SetParent(petMouth);
-            ball.transform.localPosition = Vector3.zero;
-            ball.transform.localRotation = Quaternion.identity;
-            //Destroy(ball.gameObject);
-        
+
+        ball.transform.SetParent(petMouth);
+        ball.transform.localPosition = Vector3.zero;
+        ball.transform.localRotation = Quaternion.identity;
+
+
 
 
         animationController.animator.Play(animationController.runForwardAnimation);
