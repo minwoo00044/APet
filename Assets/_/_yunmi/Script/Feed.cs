@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem.XR.Haptics;
 using UnityEngine.UI;
 using Ursaanimation.CubicFarmAnimals;
 
 public class Feed : MonoBehaviour
 {
     public float speed = 1f;
+    public GameObject bubbleParticle;
     private GameObject targetFood;
     private GameObject targetBall;
     //public Button feedButton;
@@ -17,6 +19,8 @@ public class Feed : MonoBehaviour
     private Vector3 originalPosition;
     public Transform petMouth;
     public bool dancing = false;
+    public float spawnInterval = 0.1f;
+    private float lastSpawnTime = 0f;
 
     void Start()
     {
@@ -24,6 +28,7 @@ public class Feed : MonoBehaviour
         animationController = GetComponent<AnimationController>();
         //feedButton.onClick.AddListener(MoveToTargetFood);
         ballButton.onClick.AddListener(DanceAnimation);
+
     }
     void Update()
     {
@@ -44,7 +49,37 @@ public class Feed : MonoBehaviour
                 StartCoroutine(MoveToBall(targetBall.transform));
             }
         }
+        if (Input.GetMouseButtonDown(0))
+        {
+            PetShower();
+        }
+
     }
+    public void PetShower()
+    {
+        StartCoroutine(SpawnParticleCoroutine());
+    }
+    IEnumerator SpawnParticleCoroutine()
+    {
+        while (Input.GetMouseButton(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.gameObject == this.gameObject)
+                {
+                    Vector3 mousePosition = hit.point;
+                    GameObject particleInstance = Instantiate(bubbleParticle, mousePosition, Quaternion.identity);
+                    Destroy(particleInstance, 0.5f);
+                }
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
+        //washTouch = false;
+    }
+    
     public void DanceAnimation()
     {
         StartCoroutine(DanceRoutine());
@@ -142,5 +177,7 @@ public class Feed : MonoBehaviour
         }
         animationController.animator.Play(animationController.eatingAnimation);
         Destroy(target.gameObject, 4f);
+
     }
+
 }

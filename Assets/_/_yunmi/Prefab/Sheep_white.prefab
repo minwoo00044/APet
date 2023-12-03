@@ -2097,6 +2097,7 @@ GameObject:
   - component: {fileID: 8185963723970810569}
   - component: {fileID: 8185963723970810582}
   - component: {fileID: 7385260253625303699}
+  - component: {fileID: 8333754353067948326}
   m_Layer: 0
   m_Name: Sheep_white
   m_TagString: Untagged
@@ -2181,8 +2182,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  bubbleParticle: {fileID: 8410020564511889952, guid: 52fd6676fb5627a4ca51e93eb1206968, type: 3}
   ballButton: {fileID: 0}
   petMouth: {fileID: 3237747673474081389}
+  dancing: 0
+  spawnInterval: 0.1
+--- !u!65 &8333754353067948326
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8185963723970810583}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5392472, y: 1.0492177, z: 1.203414}
+  m_Center: {x: -0.00045523047, y: 0.5059942, z: 0.10170701}
 --- !u!1 &8185963724001097088
 GameObject:
   m_ObjectHideFlags: 0

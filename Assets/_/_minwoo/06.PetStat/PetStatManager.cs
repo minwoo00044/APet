@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using TMPro;
 using UnityEngine;
 
 public class PetStatManager : MonoBehaviour
@@ -55,7 +56,6 @@ public class PetStatManager : MonoBehaviour
             var tempPetStat = new PetStat(int.Parse(ageKeyPart), int.Parse(hungerKeyPart), int.Parse(loveKeyPart), int.Parse(cleanKeyPart), int.Parse(healthKeyPart));
 
             NameStatPair.Add(nameKeyPart, tempPetStat);
-            print("!");
         }
     }
     public void SaveStatData()
@@ -89,6 +89,7 @@ public class PetStatManager : MonoBehaviour
         }
         Destroy(_petWithTag.Item2);
         _petWithTag = new Tuple<string, GameObject>(name, instance);
+        LogController.onPetChange(name);
     }
 
 }

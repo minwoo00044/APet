@@ -8,11 +8,11 @@ using UnityEngine.InputSystem;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
-public enum TouchState
-{
-    sheep,
-    food
-}
+//public enum TouchState
+//{
+//    sheep,
+//    food
+//}
 public class PlaceOnIndicator : MonoBehaviour
 {
     public static Pose currentAim;
@@ -24,19 +24,22 @@ public class PlaceOnIndicator : MonoBehaviour
 
     //[SerializeField] InputAction touchInput;
     List<ARRaycastHit> hits = new List<ARRaycastHit>();
-    TouchState state = TouchState.sheep;
+    //TouchState state = TouchState.sheep;
     [SerializeField] ARPointCloudManager pointCloudManager;
     [SerializeField] ARRaycastManager arRaycastManager;
     [SerializeField] TMP_Text logTxt;
     [SerializeField] TMP_Text logTxt1;
     [SerializeField] TMP_Text logTxt2;
     private List<ARPointCloud> pointClouds;
+    [SerializeField] TMP_Text dontDetectTxt;
     private void Awake()
     {
         //touchInput.started += _ => { placeObject(); };
         //placementIndicator.SetActive(false);
         pointClouds = new List<ARPointCloud>();
         pointCloudManager.pointCloudsChanged += OnPointCloudsChanged;
+        dontDetectTxt.gameObject.SetActive(false);
+
     }
     //private void OnEnable()
     //{
@@ -96,6 +99,7 @@ public class PlaceOnIndicator : MonoBehaviour
                         {
                             nearestPointDistance = pointDistance;
                             nearestPointPose = hit.pose;
+                            dontDetectTxt.gameObject.SetActive(false);
                         }
                     }
                     else if (arRaycastManager.Raycast(screenCenter, arHits, TrackableType.Planes)) // 특징점을 찾지 못하면 평면을 찾습니다.
@@ -103,10 +107,12 @@ public class PlaceOnIndicator : MonoBehaviour
                         ARRaycastHit hit = arHits[0];
                         nearestPointDistance = pointDistance;
                         nearestPointPose = hit.pose;
+                        dontDetectTxt.gameObject.SetActive(false);
                     }
                     else
                     {
                         placementIndicator.SetActive(false);
+                        dontDetectTxt.gameObject.SetActive(true);
                     }
                 }
             }
