@@ -7,7 +7,7 @@ using UnityEngine.InputSystem.XR.Haptics;
 using UnityEngine.UI;
 using Ursaanimation.CubicFarmAnimals;
 
-public class Feed : MonoBehaviour
+public class PetController : MonoBehaviour
 {
     public float speed = 1f;
     public GameObject bubbleParticle;
@@ -20,6 +20,8 @@ public class Feed : MonoBehaviour
     public Transform petMouth;
     public bool dancing = false;
     public float spawnInterval = 0.1f;
+    PetStat petStat;
+
     void Start()
     {
         originalPosition = transform.position;
@@ -55,9 +57,7 @@ public class Feed : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                Transform targetTransform = new GameObject("Target").transform;
-                targetTransform.position = hit.point;
-                MoveToThere(targetTransform);
+                MoveToThere(hit.point);
             }
         }
 
@@ -86,13 +86,13 @@ public class Feed : MonoBehaviour
         }
         //washTouch = false;
     }
-    public void MoveToThere(Transform targetTransform)
+    public void MoveToThere(Vector3 targetTransform)
     {
         StartCoroutine(MoveToLocoation(targetTransform));
     }
-    IEnumerator MoveToLocoation(Transform targetTransform)
+    IEnumerator MoveToLocoation(Vector3 targetTransform)
     {
-        Vector3 targetDirection = targetTransform.position - transform.position;
+        Vector3 targetDirection = targetTransform - transform.position;
         targetDirection.y = 0;
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
 
@@ -104,13 +104,15 @@ public class Feed : MonoBehaviour
         }
         animationController.animator.Play(animationController.runForwardAnimation);
 
-        Vector3 targetPosition = new Vector3(targetTransform.position.x, transform.position.y, targetTransform.position.z);
+        Vector3 targetPosition = new Vector3(targetTransform.x, transform.position.y, targetTransform.z);
         while (Vector3.Distance(transform.position, targetPosition) > 1f)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, 5f * Time.deltaTime);
             yield return null;
         }
         animationController.animator.Play(animationController.idleAnimation);
+        //Raycast로 펫의 이동 위치 정한다면 Destroy 추가
+        //Destroy(targetTransform.gameObject);
     }
 
     
