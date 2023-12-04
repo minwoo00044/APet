@@ -1157,9 +1157,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Feed
-
-'
+  m_text: RePlace
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1721,6 +1719,10 @@ PrefabInstance:
       value: XR Origin
       objectReference: {fileID: 0}
     - target: {fileID: 6072027243389292071, guid: 50fc90572ea2ebb468d87cca7b13ce46, type: 3}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 1358952499}
+    - target: {fileID: 6072027243389292071, guid: 50fc90572ea2ebb468d87cca7b13ce46, type: 3}
       propertyPath: logTxt
       value: 
       objectReference: {fileID: 1333099892}
@@ -1899,7 +1901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5479764118522546374, guid: 694b398f180bb8b48a1a427f7caeee14, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 297.7778
       objectReference: {fileID: 0}
     - target: {fileID: 5479764118522546374, guid: 694b398f180bb8b48a1a427f7caeee14, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1907,7 +1909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5479764118522546374, guid: 694b398f180bb8b48a1a427f7caeee14, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 168.8889
       objectReference: {fileID: 0}
     - target: {fileID: 5479764118522546374, guid: 694b398f180bb8b48a1a427f7caeee14, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1931,7 +1933,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8079948464593236551, guid: 694b398f180bb8b48a1a427f7caeee14, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 297.7778
       objectReference: {fileID: 0}
     - target: {fileID: 8079948464593236551, guid: 694b398f180bb8b48a1a427f7caeee14, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1939,7 +1941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8079948464593236551, guid: 694b398f180bb8b48a1a427f7caeee14, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 486.6667
       objectReference: {fileID: 0}
     - target: {fileID: 8079948464593236551, guid: 694b398f180bb8b48a1a427f7caeee14, type: 3}
       propertyPath: m_AnchoredPosition.y

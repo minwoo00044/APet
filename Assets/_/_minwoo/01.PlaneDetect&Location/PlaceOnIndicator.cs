@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
@@ -19,7 +20,6 @@ public class PlaceOnIndicator : MonoBehaviour
     public static GameObject placePrefab;
     [SerializeField] GameObject placementIndicator;
     [SerializeField] GameObject sheep;
-
     GameObject spawnedObject;
 
     //[SerializeField] InputAction touchInput;
@@ -29,9 +29,10 @@ public class PlaceOnIndicator : MonoBehaviour
     [SerializeField] ARRaycastManager arRaycastManager;
     //[SerializeField] TMP_Text logTxt;
     //[SerializeField] TMP_Text logTxt1;
-    //[SerializeField] TMP_Text logTxt2;
+    [SerializeField] TMP_Text logTxt2;
     private List<ARPointCloud> pointClouds;
     [SerializeField] TMP_Text dontDetectTxt;
+    [SerializeField] Button button;
     private void Awake()
     {
         //touchInput.started += _ => { placeObject(); };
@@ -39,7 +40,7 @@ public class PlaceOnIndicator : MonoBehaviour
         pointClouds = new List<ARPointCloud>();
         pointCloudManager.pointCloudsChanged += OnPointCloudsChanged;
         dontDetectTxt.gameObject.SetActive(false);
-        placePrefab = null;
+        button.onClick.AddListener(() => PetStatManager.Instance.GetCurrentPet().transform.position = placementIndicator.transform.position);
     }
     //private void OnEnable()
     //{
@@ -125,6 +126,7 @@ public class PlaceOnIndicator : MonoBehaviour
             placementIndicator.SetActive(true);
         }
         currentAim = nearestPointPose;
+            logTxt2.text = $"{placementIndicator.activeInHierarchy}";
     }
 
     //TEST

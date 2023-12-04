@@ -1082,7 +1082,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Feed
+  m_text: 'RePlace
 
 '
   m_isRightToLeft: 0
@@ -1562,8 +1562,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4397196414395113207, guid: 4425cb9730e81ae41bcd86fa232c718f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2319455558359252261}
   m_SourcePrefab: {fileID: 100100000, guid: 4425cb9730e81ae41bcd86fa232c718f, type: 3}
+--- !u!1 &2319455558359252260 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4397196414395113207, guid: 4425cb9730e81ae41bcd86fa232c718f, type: 3}
+  m_PrefabInstance: {fileID: 2319455558359252259}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2319455558359252261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2319455558359252260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7fb9ce8c68f6df46844f7acc923dc64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  log: {fileID: 1333099892}
 --- !u!1001 &3522636802098145943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1645,6 +1666,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin
       objectReference: {fileID: 0}
+    - target: {fileID: 6072027243389292071, guid: 50fc90572ea2ebb468d87cca7b13ce46, type: 3}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 1358952499}
     - target: {fileID: 6072027243389292071, guid: 50fc90572ea2ebb468d87cca7b13ce46, type: 3}
       propertyPath: logTxt
       value: 
