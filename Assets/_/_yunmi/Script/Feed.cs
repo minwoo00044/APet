@@ -20,8 +20,6 @@ public class Feed : MonoBehaviour
     public Transform petMouth;
     public bool dancing = false;
     public float spawnInterval = 0.1f;
-    private float lastSpawnTime = 0f;
-
     void Start()
     {
         originalPosition = transform.position;
@@ -51,7 +49,16 @@ public class Feed : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
-            PetShower();
+            //MoveToThere Test
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                Transform targetTransform = new GameObject("Target").transform;
+                targetTransform.position = hit.point;
+                MoveToThere(targetTransform);
+            }
         }
 
     }
@@ -79,6 +86,33 @@ public class Feed : MonoBehaviour
         }
         //washTouch = false;
     }
+    public void MoveToThere(Transform targetTransform)
+    {
+        StartCoroutine(MoveToLocoation(targetTransform));
+    }
+    IEnumerator MoveToLocoation(Transform targetTransform)
+    {
+        Vector3 targetDirection = targetTransform.position - transform.position;
+        targetDirection.y = 0;
+        Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+
+        while (Quaternion.Angle(transform.rotation, targetRotation) > 0.1f)
+        {
+            animationController.animator.Play(animationController.turn90LAnimation);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
+            yield return null;
+        }
+        animationController.animator.Play(animationController.runForwardAnimation);
+
+        Vector3 targetPosition = new Vector3(targetTransform.position.x, transform.position.y, targetTransform.position.z);
+        while (Vector3.Distance(transform.position, targetPosition) > 1f)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, 5f * Time.deltaTime);
+            yield return null;
+        }
+        animationController.animator.Play(animationController.idleAnimation);
+    }
+
     
     public void DanceAnimation()
     {
