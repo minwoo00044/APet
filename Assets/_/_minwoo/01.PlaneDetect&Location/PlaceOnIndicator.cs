@@ -39,7 +39,6 @@ public class PlaceOnIndicator : MonoBehaviour
         pointClouds = new List<ARPointCloud>();
         pointCloudManager.pointCloudsChanged += OnPointCloudsChanged;
         dontDetectTxt.gameObject.SetActive(false);
-
     }
     //private void OnEnable()
     //{

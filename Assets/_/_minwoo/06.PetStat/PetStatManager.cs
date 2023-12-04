@@ -91,7 +91,16 @@ public class PetStatManager : MonoBehaviour
         _petWithTag = new Tuple<string, GameObject>(name, instance);
         LogController.onPetChange(name);
     }
-
+    public GameObject GetCurrentPet()
+    {
+        if(_petWithTag.Item1 != string.Empty && _petWithTag.Item2 is not null)
+            return _petWithTag.Item2;
+        else
+        {
+            LogController.onError("You are not place your pet on Game");
+            return null;
+        }
+    }
 }
 
 public class PetStat

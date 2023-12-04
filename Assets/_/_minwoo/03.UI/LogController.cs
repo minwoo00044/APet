@@ -8,6 +8,7 @@ public class LogController : MonoBehaviour
 {
     public static Action<string> onPetChange;
     public static Action<string> onObjectChange;
+    public static Action<string> onError;
 
     [SerializeField] float fadeOutTime;
     private TMP_Text log;
@@ -16,9 +17,11 @@ public class LogController : MonoBehaviour
         log = GetComponent<TMP_Text>();
         onObjectChange = null;
         onPetChange = null;
+        onError = null;
 
         onPetChange += (name) => StartCoroutine(ChangeLogAndFadeOut($"You changed your pet to {name}. "));
         onObjectChange += (name) => StartCoroutine(ChangeLogAndFadeOut($"You can place {name} by touch."));
+        onError += (ctx)=> StartCoroutine(ChangeLogAndFadeOut(ctx));
     }
 
     IEnumerator ChangeLogAndFadeOut(string txt)
