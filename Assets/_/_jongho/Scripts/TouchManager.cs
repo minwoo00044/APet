@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.XR.ARFoundation;
+using TMPro;
 
 public class TouchManager : MonoBehaviour
 {
@@ -10,8 +11,13 @@ public class TouchManager : MonoBehaviour
     private List<ARRaycastHit> hits = new List<ARRaycastHit>();
     
     private Vector3 indicatorPos;
-    private Feed pet;
+    private PetController pet;
     public GameObject petStatus;
+
+    public TMP_Text tmp1;
+    public TMP_Text tmp2;
+    public TMP_Text tmp3;
+    
 
     private void Awake()
     {
@@ -20,6 +26,10 @@ public class TouchManager : MonoBehaviour
 
     private void Update()
     {
+        tmp1.text = "default";
+        tmp2.text = "default";
+        tmp3.text = "default";
+
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -27,30 +37,25 @@ public class TouchManager : MonoBehaviour
             // 레이캐스트를 생성하고 UI 레이어에서 레이캐스트 히트를 확인
             Ray ray = Camera.main.ScreenPointToRay(touch.position);
             RaycastHit hit;
-
-            // UI 터치
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, 5))
-            {
-                petStatus.SetActive(false);
-                return;
-            }
+           
             // 펫 터치
-            else if (Physics.Raycast(ray, out hit, Mathf.Infinity, 6))
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, 1 << 6))
             {
+                tmp2.text = "pet touch";
                 // 펫 상태창 팝업
                 petStatus.SetActive(true);
             }
             else
-            {
+            {                
                 indicatorPos = PlaceOnIndicator.currentAim.position;
-
-                // 선택된 상태 체크해서 
+                
                 // 선택 상태 아니라면
                 if (PlaceOnIndicator.placePrefab == null)
                 {
-                    // 펫을 해당 위치로 이동시키는 함수 호출
-                    pet = PetStatManager.Instance.GetCurrentPet().GetComponent<Feed>();
-                    // pet.MoveToThere(indicatorPos);
+                    tmp3.text = "pet move";
+                    // 펫을 indicator 위치로 이동시키는 함수 호출
+                    pet = PetStatManager.Instance.GetCurrentPet().GetComponent<PetController>();
+                    pet.MoveToThere(indicatorPos);
                 }
                 // 선택 상태라면
                 else
@@ -60,6 +65,7 @@ public class TouchManager : MonoBehaviour
                     PlaceOnIndicator.placePrefab = null;
                 }
             }
+
         }
     }
 

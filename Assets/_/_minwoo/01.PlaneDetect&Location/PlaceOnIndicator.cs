@@ -27,9 +27,9 @@ public class PlaceOnIndicator : MonoBehaviour
     //TouchState state = TouchState.sheep;
     [SerializeField] ARPointCloudManager pointCloudManager;
     [SerializeField] ARRaycastManager arRaycastManager;
-    [SerializeField] TMP_Text logTxt;
-    [SerializeField] TMP_Text logTxt1;
-    [SerializeField] TMP_Text logTxt2;
+    //[SerializeField] TMP_Text logTxt;
+    //[SerializeField] TMP_Text logTxt1;
+    //[SerializeField] TMP_Text logTxt2;
     private List<ARPointCloud> pointClouds;
     [SerializeField] TMP_Text dontDetectTxt;
     private void Awake()
@@ -39,6 +39,7 @@ public class PlaceOnIndicator : MonoBehaviour
         pointClouds = new List<ARPointCloud>();
         pointCloudManager.pointCloudsChanged += OnPointCloudsChanged;
         dontDetectTxt.gameObject.SetActive(false);
+        placePrefab = null;
     }
     //private void OnEnable()
     //{
@@ -55,7 +56,7 @@ public class PlaceOnIndicator : MonoBehaviour
         foreach (var added in args.added)
         {
             pointClouds.Add(added);
-            logTxt.text = $"{pointClouds.Count}";
+            //logTxt.text = $"{pointClouds.Count}";
         }
 
         // 업데이트된 포인트 클라우드를 리스트에서 찾아 값을 갱신합니다.
@@ -119,7 +120,7 @@ public class PlaceOnIndicator : MonoBehaviour
 
         if (nearestPointDistance < float.MaxValue)
         {
-            logTxt2.text = $"active";
+            //logTxt2.text = $"active";
             placementIndicator.transform.position = nearestPointPose.position;
             placementIndicator.SetActive(true);
         }

@@ -447,7 +447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &259166134
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1553,7 +1553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: 0}
+  m_AnchoredPosition: {x: 50, y: -323}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1928490837
@@ -1899,7 +1899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5479764118522546374, guid: 694b398f180bb8b48a1a427f7caeee14, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 297.7778
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5479764118522546374, guid: 694b398f180bb8b48a1a427f7caeee14, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1907,7 +1907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5479764118522546374, guid: 694b398f180bb8b48a1a427f7caeee14, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 168.8889
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5479764118522546374, guid: 694b398f180bb8b48a1a427f7caeee14, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1931,7 +1931,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8079948464593236551, guid: 694b398f180bb8b48a1a427f7caeee14, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 297.7778
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8079948464593236551, guid: 694b398f180bb8b48a1a427f7caeee14, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1939,7 +1939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8079948464593236551, guid: 694b398f180bb8b48a1a427f7caeee14, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 486.6667
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8079948464593236551, guid: 694b398f180bb8b48a1a427f7caeee14, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1983,6 +1983,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   petStatus: {fileID: 259166133}
+  tmp1: {fileID: 1333099892}
+  tmp2: {fileID: 849120058}
+  tmp3: {fileID: 1748626830}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
