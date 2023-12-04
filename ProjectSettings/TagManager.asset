@@ -6,6 +6,9 @@ TagManager:
   tags:
   - food
   - ball
+  - baseSDK
+  - Andy
+  - particle
   layers:
   - Default
   - TransparentFX
@@ -13,7 +16,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Pet
   - 
   - 
   - 

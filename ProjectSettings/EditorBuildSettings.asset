@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_/_jongho/PlaneDetectScene_dup.unity
-    guid: 4c721c0400da3ef43be5ddeb059909c6
+    path: Assets/_/_jongho/Scenes/PlaneDetectScene_dup2.unity
+    guid: 5f487d6b461cef241a2f83ff7918964a
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: c3629fd0155e4aa45b854f307a387d3e, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 24b1d5aae57edfd46b9bce862978aa15, type: 2}
