@@ -19,6 +19,9 @@ public class TouchManager : MonoBehaviour
     public TMP_Text tmp2;
     public TMP_Text tmp3;
 
+    public LayerMask mask;
+    
+
     public static Action<string> onLog;
     private void Awake()
     {
@@ -36,37 +39,58 @@ public class TouchManager : MonoBehaviour
         {
             Touch touch = Input.GetTouch(0);
 
-            // 레이캐스트를 생성하고 UI 레이어에서 레이캐스트 히트를 확인
-            Ray ray = Camera.main.ScreenPointToRay(touch.position);
-            RaycastHit hit;
-           
-            // 펫 터치
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, 1 << 6))
+            
+
+            // UI를 터치했는지 먼저 확인하기 위한 레이캐스트
+            PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+            eventDataCurrentPosition.position = new Vector2(touch.position.x, touch.position.y);
+
+            List<RaycastResult> results = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+
+
+            if (EventSystem.current.IsPointerOverGameObject(touch.fingerId) && touch.phase != TouchPhase.Ended)
             {
-                tmp2.text = "pet touch";
-                // 펫 상태창 팝업
-                petStatus.SetActive(true);
-            }
-            else
-            {                
-                indicatorPos = PlaceOnIndicator.currentAim.position;
+                // UI를 터치한 경우의 처리를 여기에 작성합니다.
                 
-                // 선택 상태 아니라면
-                if (PlaceOnIndicator.placePrefab == null)
+                
+            }
+            else if (!EventSystem.current.IsPointerOverGameObject(touch.fingerId) && touch.phase != TouchPhase.Ended)
+            {
+                // 레이캐스트를 생성하고 UI 레이어에서 레이캐스트 히트를 확인
+                Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                RaycastHit hit;
+
+                // 펫 터치
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity, 1 << 6))
                 {
-                    tmp3.text = "pet move";
-                    // 펫을 indicator 위치로 이동시키는 함수 호출
-                    pet = PetStatManager.Instance.GetCurrentPet().GetComponent<PetController>();
-                    pet.MoveToThere(indicatorPos);
+                    tmp2.text = "pet touch";
+                    // 펫 상태창 팝업
+                    petStatus.SetActive(true);
                 }
-                // 선택 상태라면
                 else
                 {
-                    // 인디케이터 위치에 해당 오브젝트 instantiate
-                    Instantiate(PlaceOnIndicator.placePrefab, indicatorPos, Quaternion.identity);                    
-                    PlaceOnIndicator.placePrefab = null;
+                    indicatorPos = PlaceOnIndicator.currentAim.position;
+
+                    // 선택 상태 아니라면
+                    if (PlaceOnIndicator.placePrefab == null)
+                    {
+                        tmp3.text = "pet move";
+                        // 펫을 indicator 위치로 이동시키는 함수 호출
+                        pet = PetStatManager.Instance.GetCurrentPet().GetComponent<PetController>();
+                        pet.MoveToThere(indicatorPos);
+                    }
+                    // 선택 상태라면
+                    else
+                    {
+                        // 인디케이터 위치에 해당 오브젝트 instantiate
+                        Instantiate(PlaceOnIndicator.placePrefab, indicatorPos, Quaternion.identity);
+                        PlaceOnIndicator.placePrefab = null;
+                    }
                 }
             }
+
+            
 
         }
     }
