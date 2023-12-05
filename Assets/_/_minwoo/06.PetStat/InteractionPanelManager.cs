@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class InteractionPanelManager : MonoBehaviour
 {
+    [SerializeField] GameObject touchP;
     [SerializeField] TMP_Text statTxt;
     [SerializeField] Button loveBtn;
     [SerializeField] Button cleanBtn;
+
 
     public void StatPanelSetUp()
     {
@@ -28,5 +30,6 @@ public class InteractionPanelManager : MonoBehaviour
         //PetController current = PetStatManager.Instance.GetCurrentPet().GetComponent<PetController>();
         PetController current = FindAnyObjectByType<PetController>();
         cleanBtn.onClick.AddListener(current.PetShower);
+        cleanBtn.onClick.AddListener(() => touchP.SetActive(false));
     }
 }
