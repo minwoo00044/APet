@@ -18,6 +18,7 @@ public class PetController : MonoBehaviour
     public Button ballButton;
     private AnimationController animationController;
     private Vector3 originalPosition;
+    private Vector3 playerPosition;
     public Transform petMouth;
     public bool dancing = false;
     public float spawnInterval = 0.1f;
@@ -27,10 +28,11 @@ public class PetController : MonoBehaviour
     void Start()
     {
         originalPosition = transform.position;
+        playerPosition = Camera.main.transform.position + Camera.main.transform.forward * 2f;
+        Debug.Log(playerPosition);
         animationController = GetComponent<AnimationController>();
         //feedButton.onClick.AddListener(MoveToTargetFood);
         ballButton.onClick.AddListener(DanceAnimation);
-
     }
     void Update()
     {
@@ -101,7 +103,7 @@ public class PetController : MonoBehaviour
     {
         TouchManager.onLog("MoveSuccess");
         Vector3 targetDirection = targetTransform - transform.position;
-        targetDirection.y = 0;
+        //targetDirection.y = 0;
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
         float rotationSpeed = 2f;
 
@@ -150,20 +152,24 @@ public class PetController : MonoBehaviour
     {
         //animationController.animator.Play(animationController.turn90LAnimation);
         Vector3 targetDirection = ball.position - transform.position;
-        targetDirection.y = 0;
+        //targetDirection.y = 0;
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
-
-        while (Quaternion.Angle(transform.rotation, targetRotation) > 0.1f)
-        {
+        float rotatoinSpeed = 2f;
+        float angel = Quaternion.Angle(transform.rotation, targetRotation);
+        Vector3 cross = Vector3.Cross(transform.forward, targetDirection);
+        if (cross.y < 0) angel = -angel;
+        if (angel > 0)
+            animationController.animator.Play(animationController.turn90RAnimation);
+        else
             animationController.animator.Play(animationController.turn90LAnimation);
-
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
+        while(Quaternion.Angle(transform.rotation, targetRotation) > 2f)
+        {
+            transform.rotation =Quaternion.Slerp(transform.rotation, targetRotation, rotatoinSpeed * Time.deltaTime);
             yield return null;
         }
-
         animationController.animator.Play(animationController.runForwardAnimation);
 
-        Vector3 targetPosition = new Vector3(ball.position.x, transform.position.y, ball.position.z);
+        Vector3 targetPosition = new Vector3(ball.position.x, ball.position.y, ball.position.z);
         while (Vector3.Distance(transform.position, targetPosition) > 1f)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, 5f * Time.deltaTime);
@@ -177,22 +183,23 @@ public class PetController : MonoBehaviour
         ball.transform.localPosition = Vector3.zero;
         ball.transform.localRotation = Quaternion.identity;
 
-
-
-
         animationController.animator.Play(animationController.runForwardAnimation);
-        while (Vector3.Distance(transform.position, originalPosition) > 1f)
+        while (Vector3.Distance(transform.position, playerPosition) > 0.3f)
         {
-            Vector3 returnDirection = originalPosition - transform.position;
-            returnDirection.y = 0;
-            Quaternion returnRotation = Quaternion.LookRotation(returnDirection);
-            transform.rotation = Quaternion.Slerp(transform.rotation, returnRotation, speed * Time.deltaTime);
+            Vector3 returnDirection = playerPosition - transform.position;
+            //returnDirection.y = 0;
+            if (targetDirection.magnitude > 0.1f)
+            {
+                Quaternion returnRotation = Quaternion.LookRotation(returnDirection);
+                transform.rotation = Quaternion.Slerp(transform.rotation, returnRotation, speed * Time.deltaTime);
 
-            Vector3 returnPosition = new Vector3(originalPosition.x, transform.position.y, originalPosition.z);
-            transform.position = Vector3.MoveTowards(transform.position, returnPosition, 5f * Time.deltaTime);
-            yield return null;
+                Vector3 returnPosition = new Vector3(playerPosition.x, playerPosition.y, playerPosition.z);
+                transform.position = Vector3.MoveTowards(transform.position, returnPosition, 5f * Time.deltaTime);
+                yield return null;
+            }
         }
         animationController.animator.Play(animationController.idleAnimation);
+        Destroy(ball.gameObject, 1f);
         yield return null;
 
     }
@@ -209,7 +216,7 @@ public class PetController : MonoBehaviour
     IEnumerator MoveTowards(Transform target)
     {
         Vector3 targetDirection = target.position - transform.position;
-        targetDirection.y = 0;
+        //targetDirection.y = 0;
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
 
         while (Quaternion.Angle(transform.rotation, targetRotation) > 0.1f)
@@ -220,7 +227,7 @@ public class PetController : MonoBehaviour
         }
         animationController.animator.Play(animationController.walkForwardAnimation);
         float stoppingDistance = 0.65f;
-        Vector3 targetPosition = new Vector3(target.position.x, transform.position.y, target.position.z) - transform.forward * stoppingDistance;
+        Vector3 targetPosition = new Vector3(target.position.x, target.position.y, target.position.z) - transform.forward * stoppingDistance;
         while (Vector3.Distance(transform.position, targetPosition) > 0.05f)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
