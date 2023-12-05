@@ -12,6 +12,7 @@ public class BtnSlotManager : MonoBehaviour
     [SerializeField] FolderUIController folderUIController;
     Dictionary<Button, OnePanelData> btnDataPair = new Dictionary<Button, OnePanelData>();
     List<Button> buttons = new List<Button>();
+    InteractionPanelManager _interactionPanelManager;
     private void Start()
     {
         Button[] btns = btnMom.GetComponentsInChildren<Button>(true);
@@ -31,6 +32,7 @@ public class BtnSlotManager : MonoBehaviour
             panelChangeBtns[i].GetComponentInChildren<TMP_Text>().text = panelDatas[i].type.ToString();
         }
         folderUIController = GetComponent<FolderUIController>();
+        _interactionPanelManager = FindAnyObjectByType<InteractionPanelManager>();
     }
     public void SetUI(Button currentClicked, bool isPet)
     {
@@ -48,11 +50,13 @@ public class BtnSlotManager : MonoBehaviour
             if (isPet)
             {
                 buttons[i].onClick.AddListener(() => PetStatManager.Instance.ChangePet(currentData.data[index].name, currentData.data[index].prefab));
+                buttons[i].onClick.AddListener(_interactionPanelManager.StatPanelSetUp);
+                buttons[i].onClick.AddListener(_interactionPanelManager.PetInteractionBtnSetUp);
             }
             else
             {
                 buttons[i].onClick.AddListener(() => PlaceOnIndicator.placePrefab = currentData.data[index].prefab);
-                LogController.onObjectChange(currentData.data[index].name);
+                buttons[i].onClick.AddListener(() => LogController.onObjectChange(currentData.data[index].name));
             }
 
             buttons[i].onClick.AddListener(folderUIController.ToggleFolder);

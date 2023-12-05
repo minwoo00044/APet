@@ -30,7 +30,7 @@ public class PetStatManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        SaveStatData();
+        //SaveStatData();
     }
 
     private void LoadStatData()
@@ -100,6 +100,7 @@ public class PetStatManager : MonoBehaviour
             return null;
         }
     }
+    public string GetCurrentName() => _petWithTag.Item1;
 }
 
 public class PetStat

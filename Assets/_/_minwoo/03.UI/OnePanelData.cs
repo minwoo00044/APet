@@ -20,4 +20,5 @@ public enum ObjType
 {
     Pet,
     Food,
+    Toy
 }
