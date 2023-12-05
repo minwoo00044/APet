@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,7 @@ public class FolderUIController : MonoBehaviour
     [SerializeField] RectTransform folderRT;
     [SerializeField] Button toggleBtn;
     [SerializeField] float duration;
-    private bool isOpen = false;
+    private bool isOpen = true;
     private float maxWidth;
 
     private void Start()
@@ -35,7 +36,13 @@ public class FolderUIController : MonoBehaviour
         }
 
         isOpen = !isOpen;
+        TxtToggle();
     }
 
-
+    private void TxtToggle()
+    {
+        TMP_Text[] txts = folderRT.GetComponentsInChildren<TMP_Text>(true);
+        foreach(var item in txts)
+            item.gameObject.SetActive(isOpen);
+    }
 }

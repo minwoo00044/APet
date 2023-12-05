@@ -51,6 +51,7 @@ public class PetController : MonoBehaviour
                 StartCoroutine(MoveToBall(targetBall.transform));
             }
         }
+#if UNITY_EDITOR
         if (Input.GetMouseButtonDown(0))
         {
             //MoveToThere Test
@@ -62,7 +63,7 @@ public class PetController : MonoBehaviour
                 MoveToThere(hit.point);
             }
         }
-
+#endif
     }
     public void PetShower()
     {
@@ -98,6 +99,7 @@ public class PetController : MonoBehaviour
     }
     IEnumerator MoveToLocoation(Vector3 targetTransform)
     {
+        TouchManager.onLog("MoveSuccess");
         Vector3 targetDirection = targetTransform - transform.position;
         targetDirection.y = 0;
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection);

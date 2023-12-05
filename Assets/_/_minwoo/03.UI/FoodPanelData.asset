@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e78eade69895f48acf9e403a56e0a3, type: 3}
   m_Name: FoodPanelData
   m_EditorClassIdentifier: 
-  data: []
+  data:
+  - name: food
+    icon: {fileID: 0}
+    prefab: {fileID: 7853049068358932554, guid: 15da62777d18c3c41a46a587e7fd3034, type: 3}
   type: 1

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.XR.ARFoundation;
 using TMPro;
+using System;
 
 public class TouchManager : MonoBehaviour
 {
@@ -17,11 +18,12 @@ public class TouchManager : MonoBehaviour
     public TMP_Text tmp1;
     public TMP_Text tmp2;
     public TMP_Text tmp3;
-    
 
+    public static Action<string> onLog;
     private void Awake()
     {
         arRaycastManager = GetComponent<ARRaycastManager>();
+        onLog += txt => tmp1.text = txt;
     }
 
     private void Update()
