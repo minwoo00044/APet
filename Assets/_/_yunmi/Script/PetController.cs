@@ -29,7 +29,6 @@ public class PetController : MonoBehaviour
     {
         originalPosition = transform.position;
         playerPosition = Camera.main.transform.position + Camera.main.transform.forward * 2f;
-        Debug.Log(playerPosition);
         animationController = GetComponent<AnimationController>();
         //feedButton.onClick.AddListener(MoveToTargetFood);
         ballButton.onClick.AddListener(DanceAnimation);
