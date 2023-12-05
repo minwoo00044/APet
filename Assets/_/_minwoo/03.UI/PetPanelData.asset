@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
   - name: Sheep
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: bb72b3a6fb47d9c44bf7abacd16ef97c, type: 3}
     prefab: {fileID: 1121368238102141770, guid: a390007f70c1594499b5dbefb26ad2d9, type: 3}
   - name: Tester
     icon: {fileID: 0}
