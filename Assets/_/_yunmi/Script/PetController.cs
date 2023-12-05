@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem.XR.Haptics;
@@ -21,6 +22,7 @@ public class PetController : MonoBehaviour
     public bool dancing = false;
     public float spawnInterval = 0.1f;
     PetStat petStat;
+    private Coroutine moveCoroutine;
 
     void Start()
     {
@@ -88,18 +90,31 @@ public class PetController : MonoBehaviour
     }
     public void MoveToThere(Vector3 targetTransform)
     {
-        StartCoroutine(MoveToLocoation(targetTransform));
+        if (moveCoroutine != null)
+        {
+            StopCoroutine(moveCoroutine);
+        }
+        moveCoroutine = StartCoroutine(MoveToLocoation(targetTransform));
     }
     IEnumerator MoveToLocoation(Vector3 targetTransform)
     {
         Vector3 targetDirection = targetTransform - transform.position;
         targetDirection.y = 0;
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+        float rotationSpeed = 2f;
 
-        while (Quaternion.Angle(transform.rotation, targetRotation) > 0.1f)
-        {
+        float angle = Quaternion.Angle(transform.rotation, targetRotation);
+        Vector3 cross = Vector3.Cross(transform.forward, targetDirection);
+        if (cross.y < 0) angle = -angle;
+
+        if (angle > 0)
+            animationController.animator.Play(animationController.turn90RAnimation);
+        else
             animationController.animator.Play(animationController.turn90LAnimation);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
+
+        while (Quaternion.Angle(transform.rotation, targetRotation) > 0.3f)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             yield return null;
         }
         animationController.animator.Play(animationController.runForwardAnimation);
@@ -111,11 +126,9 @@ public class PetController : MonoBehaviour
             yield return null;
         }
         animationController.animator.Play(animationController.idleAnimation);
-        //Raycast로 펫의 이동 위치 정한다면 Destroy 추가
-        //Destroy(targetTransform.gameObject);
     }
 
-    
+
     public void DanceAnimation()
     {
         StartCoroutine(DanceRoutine());
