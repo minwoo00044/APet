@@ -14,7 +14,7 @@ public class PetController : MonoBehaviour
     public GameObject bubbleParticle;
     private GameObject targetFood;
     private GameObject targetBall;
-    //public Button feedButton;
+    public Button feedButton;
     public Button ballButton;
     private AnimationController animationController;
     private Vector3 originalPosition;
@@ -30,7 +30,7 @@ public class PetController : MonoBehaviour
         originalPosition = transform.position;
         playerPosition = Camera.main.transform.position + Camera.main.transform.forward * 2f;
         animationController = GetComponent<AnimationController>();
-        //feedButton.onClick.AddListener(MoveToTargetFood);
+        feedButton.onClick.AddListener(PetShower);
         ballButton.onClick.AddListener(DanceAnimation);
     }
     void Update()
@@ -72,23 +72,15 @@ public class PetController : MonoBehaviour
     }
     IEnumerator SpawnParticleCoroutine()
     {
-        while (Input.GetMouseButton(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+        GameObject particleInstance = Instantiate(bubbleParticle, transform.position, Quaternion.identity);
+        ParticleSystem particleSystem = particleInstance.GetComponent<ParticleSystem>();
+        particleSystem.Play();
+        yield return new WaitForSeconds(2f);
+        particleSystem.Stop();
+        yield return new WaitWhile(() => particleSystem.IsAlive(true));
 
-            if (Physics.Raycast(ray, out hit))
-            {
-                if (hit.collider.gameObject == this.gameObject)
-                {
-                    Vector3 mousePosition = hit.point;
-                    GameObject particleInstance = Instantiate(bubbleParticle, mousePosition, Quaternion.identity);
-                    Destroy(particleInstance, 0.5f);
-                }
-            }
-            yield return new WaitForSeconds(0.1f);
-        }
-        //washTouch = false;
+        // 파티클 인스턴스 삭제
+        Destroy(particleInstance);
     }
     public void MoveToThere(Vector3 targetTransform)
     {

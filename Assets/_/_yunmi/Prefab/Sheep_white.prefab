@@ -2214,7 +2214,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  bubbleParticle: {fileID: 8410020564511889952, guid: 52fd6676fb5627a4ca51e93eb1206968, type: 3}
+  bubbleParticle: {fileID: 7223829907554394522, guid: 2b884ff324938a9439d81cd9b3c32273, type: 3}
+  feedButton: {fileID: 0}
   ballButton: {fileID: 0}
   petMouth: {fileID: 3237747673474081389}
   dancing: 0
