@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 6801178237257649259}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.935, z: 0.2}
+  m_LocalPosition: {x: 0, y: 0.65, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2219,7 +2219,7 @@ MonoBehaviour:
   feedButton: {fileID: 0}
   ballButton: {fileID: 0}
   petMouth: {fileID: 3237747673474081389}
-  strokeHeart: {fileID: 0}
+  strokeHeart: {fileID: 1297005903342124621}
   dancing: 0
   spawnInterval: 0.1
 --- !u!65 &8333754353067948326
