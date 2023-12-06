@@ -12,6 +12,7 @@ public class PetController : MonoBehaviour
 {
     public float speed = 1f;
     public GameObject bubbleParticle;
+    public GameObject heartParticle;
     private GameObject targetFood;
     private GameObject targetBall;
     public Button feedButton;
@@ -20,18 +21,18 @@ public class PetController : MonoBehaviour
     private Vector3 originalPosition;
     private Vector3 playerPosition;
     public Transform petMouth;
+    public Transform strokeHeart;
     public bool dancing = false;
     public float spawnInterval = 0.1f;
-    PetStat petStat;
     private Coroutine moveCoroutine;
-
     void Start()
     {
         originalPosition = transform.position;
         playerPosition = Camera.main.transform.position + Camera.main.transform.forward * 2f;
         animationController = GetComponent<AnimationController>();
         feedButton.onClick.AddListener(PetShower);
-        ballButton.onClick.AddListener(DanceAnimation);
+        ballButton.onClick.AddListener(PetStroke);
+
     }
     void Update()
     {
@@ -40,7 +41,7 @@ public class PetController : MonoBehaviour
             targetFood = GameObject.FindGameObjectWithTag("food");
             if (targetFood != null)
             {
-                StartCoroutine(MoveTowards(targetFood.transform));
+                StartCoroutine(MoveToFood(targetFood.transform));
             }
         }
 
@@ -53,22 +54,38 @@ public class PetController : MonoBehaviour
             }
         }
 #if UNITY_EDITOR
-        if (Input.GetMouseButtonDown(0))
-        {
-            //MoveToThere Test
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    //MoveToThere Test
+        //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //    RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
-            {
-                MoveToThere(hit.point);
-            }
-        }
+        //    if (Physics.Raycast(ray, out hit))
+        //    {
+        //        MoveToThere(hit.point);
+        //    }
+        //}
 #endif
+    }
+    public void PetStroke()
+    {
+        StartCoroutine(StrokeHeartParticle());
+    }
+    IEnumerator StrokeHeartParticle()
+    {
+        GameObject particleInstance = Instantiate(heartParticle, strokeHeart.position, Quaternion.identity);
+        ParticleSystem particleSystem = particleInstance.GetComponentInChildren<ParticleSystem>();
+        particleSystem.Play();
+        yield return new WaitForSeconds(5f);
+        particleSystem.Stop();
+        Destroy(particleInstance);
+        PetStatManager.Instance.NameStatPair[PetStatManager.Instance.GetCurrentName()].Love += 50;
+
     }
     public void PetShower()
     {
         StartCoroutine(SpawnParticleCoroutine());
+       
     }
     IEnumerator SpawnParticleCoroutine()
     {
@@ -79,7 +96,7 @@ public class PetController : MonoBehaviour
         particleSystem.Stop();
         yield return new WaitWhile(() => particleSystem.IsAlive(true));
 
-        // 파티클 인스턴스 삭제
+        PetStatManager.Instance.NameStatPair[PetStatManager.Instance.GetCurrentName()].Clean += 100;
         Destroy(particleInstance);
     }
     public void MoveToThere(Vector3 targetTransform)
@@ -137,6 +154,10 @@ public class PetController : MonoBehaviour
         animationController.animator.Play(animationController.idleAnimation);
         dancing = false;
         transform.position = originalPosition;
+        PetStatManager.Instance.NameStatPair[PetStatManager.Instance.GetCurrentName()].Health += 20;
+        PetStatManager.Instance.NameStatPair[PetStatManager.Instance.GetCurrentName()].Love += 20;
+
+
     }
     IEnumerator MoveToBall(Transform ball)
     {
@@ -152,9 +173,9 @@ public class PetController : MonoBehaviour
             animationController.animator.Play(animationController.turn90RAnimation);
         else
             animationController.animator.Play(animationController.turn90LAnimation);
-        while(Quaternion.Angle(transform.rotation, targetRotation) > 2f)
+        while (Quaternion.Angle(transform.rotation, targetRotation) > 2f)
         {
-            transform.rotation =Quaternion.Slerp(transform.rotation, targetRotation, rotatoinSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotatoinSpeed * Time.deltaTime);
             yield return null;
         }
         animationController.animator.Play(animationController.runForwardAnimation);
@@ -190,6 +211,7 @@ public class PetController : MonoBehaviour
         }
         animationController.animator.Play(animationController.idleAnimation);
         Destroy(ball.gameObject, 1f);
+        PetStatManager.Instance.NameStatPair[PetStatManager.Instance.GetCurrentName()].Health += 60;
         yield return null;
 
     }
@@ -203,7 +225,7 @@ public class PetController : MonoBehaviour
     //    }
     //}
 
-    IEnumerator MoveTowards(Transform target)
+    IEnumerator MoveToFood(Transform target)
     {
         Vector3 targetDirection = target.position - transform.position;
         //targetDirection.y = 0;
@@ -224,7 +246,10 @@ public class PetController : MonoBehaviour
             yield return null;
         }
         animationController.animator.Play(animationController.eatingAnimation);
+
         Destroy(target.gameObject, 4f);
+        PetStatManager.Instance.NameStatPair[PetStatManager.Instance.GetCurrentName()].Hunger += 100;
+
 
     }
 
