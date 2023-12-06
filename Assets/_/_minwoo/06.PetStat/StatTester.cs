@@ -5,6 +5,7 @@ using UnityEngine;
 public class StatTester : MonoBehaviour
 {
     public string testName;
+    public AudioClip test;
     PetStat currentStat;
     [ContextMenu("Debug")]
     public void DebugStat()
@@ -20,5 +21,10 @@ public class StatTester : MonoBehaviour
     public void Test1()
     {
         currentStat.Hunger++;
+    }
+    [ContextMenu("TestSound")]
+    public void test2()
+    {
+        SoundManager.PlayOneShot(test);
     }
 }
