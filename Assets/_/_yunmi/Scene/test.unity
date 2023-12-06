@@ -1224,6 +1224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   petData: {fileID: 11400000, guid: 762d57c24dbb16a4e835ab02c49669eb, type: 2}
+  timeScale: 1
 --- !u!4 &1574742226
 Transform:
   m_ObjectHideFlags: 0
