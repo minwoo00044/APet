@@ -120,9 +120,25 @@ public class PetStat
         _health = health;
     }
 
-    public int Hunger { get => _hunger; set => _hunger = value; }
+    public int Hunger
+    {
+        get => _hunger;
+        set => _hunger = (value > 100) ? 100 : value;
+    }
+
     public int Love { get => _love; set => _love = value; }
-    public int Clean { get => _clean; set => _clean = value; }
+
+    public int Clean
+    {
+        get => _clean;
+        set => _clean = (value > 100) ? 100 : value;
+    }
+
     public int Age { get => _age; set => _age = value; }
-    public int Health { get => _health; set => _health = value; }
+
+    public int Health
+    {
+        get => _health;
+        set => _health = (value > 100) ? 100 : value;
+    }
 }
