@@ -11,9 +11,10 @@ public class MouseEffect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && spawnTime >= defaultTime)
+        if (Input.GetMouseButton(0) && spawnTime >= defaultTime)
         {
             StarCreate();
+            spawnTime = 0;
         }
         spawnTime += Time.deltaTime;
     }
@@ -21,7 +22,7 @@ public class MouseEffect : MonoBehaviour
     void StarCreate()
     {
         Vector3 mPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mPosition.z = 0;
+        mPosition.z = 1;
         Instantiate(starPrefab, mPosition, Quaternion.identity);
     }
 }

@@ -1984,6 +1984,10 @@ PrefabInstance:
       propertyPath: tmp3
       value: 
       objectReference: {fileID: 1748626830}
+    - target: {fileID: 5321372742062282560, guid: 694b398f180bb8b48a1a427f7caeee14, type: 3}
+      propertyPath: EffectPrefab
+      value: 
+      objectReference: {fileID: 2469588056306425699, guid: 69caaad34b4ad7b4bb0d4d896b5e88c3, type: 3}
     - target: {fileID: 5362102795882868938, guid: 694b398f180bb8b48a1a427f7caeee14, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2111,6 +2115,10 @@ PrefabInstance:
     - target: {fileID: 8096167754593398013, guid: 694b398f180bb8b48a1a427f7caeee14, type: 3}
       propertyPath: m_Name
       value: MainUICanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8096167754593398013, guid: 694b398f180bb8b48a1a427f7caeee14, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

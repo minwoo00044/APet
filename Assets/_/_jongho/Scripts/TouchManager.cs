@@ -21,8 +21,15 @@ public class TouchManager : MonoBehaviour
 
     public LayerMask mask;
     
-
     public static Action<string> onLog;
+
+
+    public GameObject EffectPrefab;
+    float spawnTime;
+    public float defaultTime = 0.05f;
+
+
+
     private void Awake()
     {
         arRaycastManager = GetComponent<ARRaycastManager>();
@@ -89,10 +96,23 @@ public class TouchManager : MonoBehaviour
                     }
                 }
             }
-
             
-
-        }
+            if (spawnTime >= defaultTime)
+            {
+                EffectCreate();
+                spawnTime = 0;
+            }
+            spawnTime += Time.deltaTime;
+        }               
     }
 
+    void EffectCreate()
+    {
+        // 터치한 위치를 화면 좌표에서 월드 좌표로 변환
+        Vector3 touchPos = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+        touchPos.z = 0;
+
+        // 터치한 위치에 프리팹 생성
+        Instantiate(EffectPrefab, touchPos, Quaternion.identity);        
+    }
 }
