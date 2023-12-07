@@ -16,6 +16,9 @@ public class PetStatManager : MonoBehaviour
 
     private Tuple<string, GameObject> _petWithTag = new Tuple<string, GameObject>("", null);
 
+    private float gameTimeInSeconds = 0f;  // Game time in seconds
+    private float realTimeElapsed = 0f;   // Real time elapsed in seconds
+    public float timeScale = 1f;
     private void Awake()
     {
         if (Instance == null)
@@ -28,11 +31,32 @@ public class PetStatManager : MonoBehaviour
         LoadStatData();
     }
 
+    private void Update()
+    {
+#if UNITY_ANDROID && !UNITY_EDITOR
+        realTimeElapsed += Time.deltaTime * timeScale;  // Update real time elapsed
+
+        float secondsPerGameDay = 24 * 60 * 60; 
+
+        gameTimeInSeconds += Time.deltaTime * timeScale * (secondsPerGameDay / 600);
+        Debug.Log(gameTimeInSeconds);
+
+        // Check if one year has passed
+        if (gameTimeInSeconds >= secondsPerGameDay * 365)
+        {
+            foreach (var item in NameStatPair.Values)
+                item.Age += 1;
+                gameTimeInSeconds = 0f;
+        }
+#endif
+
+    }
+#if UNITY_ANDROID && !UNITY_EDITOR
     private void OnApplicationQuit()
     {
-        //SaveStatData();
+        SaveStatData();
     }
-
+#endif
     private void LoadStatData()
     {
         TextAsset data = Resources.Load("StatData") as TextAsset;

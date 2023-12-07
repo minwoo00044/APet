@@ -16,7 +16,7 @@ MonoBehaviour:
   - name: Sheep
     icon: {fileID: 21300000, guid: bb72b3a6fb47d9c44bf7abacd16ef97c, type: 3}
     prefab: {fileID: 1121368238102141770, guid: a390007f70c1594499b5dbefb26ad2d9, type: 3}
-  - name: Tester
-    icon: {fileID: 0}
-    prefab: {fileID: 3408818361448841979, guid: 9d518c4f38622344b80032cfbf13789d, type: 3}
+  - name: Goat
+    icon: {fileID: 21300000, guid: 2b4e7aed2e1812c4f898357350085edb, type: 3}
+    prefab: {fileID: 6885452974112614176, guid: 051d539d67478be4cbcddfedc8baaf8d, type: 3}
   type: 0
