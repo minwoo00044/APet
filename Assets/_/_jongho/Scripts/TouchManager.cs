@@ -57,7 +57,6 @@ public class TouchManager : MonoBehaviour
             List<RaycastResult> results = new List<RaycastResult>();
             EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
 
-
             if (EventSystem.current.IsPointerOverGameObject(touch.fingerId) && touch.phase != TouchPhase.Ended)
             {
                 // UI를 터치한 경우의 처리를 여기에 작성합니다.
