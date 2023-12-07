@@ -12,8 +12,8 @@ public class TouchEffect : MonoBehaviour
     public UnityEngine.Color[] colors;
     public float colorSpeed = 5;
 
-    public float minSize = 0.01f;
-    public float maxSize = 0.05f;
+    public float minSize = 1f;
+    public float maxSize = 3f;
 
     // Start is called before the first frame update
     void Start()

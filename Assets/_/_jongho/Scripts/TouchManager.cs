@@ -24,16 +24,18 @@ public class TouchManager : MonoBehaviour
     public static Action<string> onLog;
 
 
-    public GameObject EffectPrefab;
-    float spawnTime;
-    public float defaultTime = 0.05f;
+    //public GameObject EffectPrefab;
+    //float spawnTime;
+    //public float defaultTime = 0.05f;
 
+    Touch touch;
 
-
+    //private Vector2 UIPos;
     private void Awake()
     {
         arRaycastManager = GetComponent<ARRaycastManager>();
         onLog += txt => tmp1.text = txt;
+        //UIPos = gameObject.GetComponent<RectTransform>().position;
     }
 
     private void Update()
@@ -44,11 +46,11 @@ public class TouchManager : MonoBehaviour
 
         if (Input.touchCount > 0)
         {
-            Touch touch = Input.GetTouch(0);
+            touch = Input.GetTouch(0);
 
             
 
-            // UI를 터치했는지 먼저 확인하기 위한 레이캐스트
+            // UI를 터치했는지 먼저   확인하기 위한 레이캐스트
             PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
             eventDataCurrentPosition.position = new Vector2(touch.position.x, touch.position.y);
 
@@ -97,22 +99,25 @@ public class TouchManager : MonoBehaviour
                 }
             }
             
-            if (spawnTime >= defaultTime)
-            {
-                EffectCreate();
-                spawnTime = 0;
-            }
-            spawnTime += Time.deltaTime;
+            //if (spawnTime >= defaultTime)
+            //{
+            //    EffectCreate();
+            //    spawnTime = 0;
+            //}
+            //spawnTime += Time.deltaTime;
         }               
     }
 
-    void EffectCreate()
-    {
-        // 터치한 위치를 화면 좌표에서 월드 좌표로 변환
-        Vector3 touchPos = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
-        touchPos.z = 0;
+    //void EffectCreate()
+    //{
+        
+    //        // 터치한 위치에 프리팹 생성
+    //        GameObject touchEff = Instantiate(EffectPrefab, transform);
+    //        touchEff.transform.position = touch.position;
 
-        // 터치한 위치에 프리팹 생성
-        Instantiate(EffectPrefab, touchPos, Quaternion.identity);        
-    }
+    //        // Canvas의 RectTransform에 맞춰 조정
+    //        //RectTransform rectTransform = touchEff.GetComponent<RectTransform>();
+    //        //rectTransform.anchoredPosition = touch.position + UIPos;
+        
+    //}
 }

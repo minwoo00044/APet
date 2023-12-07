@@ -30,8 +30,8 @@ public class PetController : MonoBehaviour
         originalPosition = transform.position;
         playerPosition = Camera.main.transform.position + Camera.main.transform.forward * 2f;
         animationController = GetComponent<AnimationController>();
-        feedButton.onClick.AddListener(PetShower);
-        ballButton.onClick.AddListener(PetStroke);
+        //feedButton.onClick.AddListener(PetShower);
+        //ballButton.onClick.AddListener(PetStroke);
 
     }
     void Update()
