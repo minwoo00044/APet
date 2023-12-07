@@ -2594,6 +2594,7 @@ MonoBehaviour:
   strokeHeart: {fileID: 0}
   dancing: 0
   spawnInterval: 0.1
+  _clip: {fileID: 8300000, guid: 835a7d09b6d4d0448be150f042e4b654, type: 3}
 --- !u!65 &6650008734792892193
 BoxCollider:
   m_ObjectHideFlags: 0

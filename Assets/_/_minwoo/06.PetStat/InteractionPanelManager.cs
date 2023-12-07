@@ -30,6 +30,7 @@ public class InteractionPanelManager : MonoBehaviour
         //PetController current = PetStatManager.Instance.GetCurrentPet().GetComponent<PetController>();
         PetController current = FindAnyObjectByType<PetController>();
         cleanBtn.onClick.AddListener(current.PetShower);
+        loveBtn.onClick.AddListener(current.PetStroke);
         cleanBtn.onClick.AddListener(() => touchP.SetActive(false));
     }
 }

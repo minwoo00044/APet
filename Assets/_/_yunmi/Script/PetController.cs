@@ -25,13 +25,15 @@ public class PetController : MonoBehaviour
     public bool dancing = false;
     public float spawnInterval = 0.1f;
     private Coroutine moveCoroutine;
+
+    [SerializeField] AudioClip _clip;
     void Start()
     {
         originalPosition = transform.position;
         playerPosition = Camera.main.transform.position + Camera.main.transform.forward * 2f;
         animationController = GetComponent<AnimationController>();
-        feedButton.onClick.AddListener(PetShower);
-        ballButton.onClick.AddListener(DanceAnimation);
+        //feedButton.onClick.AddListener(PetShower);
+        //ballButton.onClick.AddListener(DanceAnimation);
 
     }
     void Update()
@@ -69,6 +71,7 @@ public class PetController : MonoBehaviour
     }
     public void PetStroke()
     {
+        SoundManager.PlayOneShot(_clip);
         StartCoroutine(StrokeHeartParticle());
     }
     IEnumerator StrokeHeartParticle()
@@ -84,8 +87,9 @@ public class PetController : MonoBehaviour
     }
     public void PetShower()
     {
+        SoundManager.PlayOneShot(_clip);
+
         StartCoroutine(SpawnParticleCoroutine());
-       
     }
     IEnumerator SpawnParticleCoroutine()
     {
@@ -106,6 +110,7 @@ public class PetController : MonoBehaviour
             StopCoroutine(moveCoroutine);
         }
         moveCoroutine = StartCoroutine(MoveToLocoation(targetTransform));
+        SoundManager.PlayOneShot(_clip);
     }
     IEnumerator MoveToLocoation(Vector3 targetTransform)
     {

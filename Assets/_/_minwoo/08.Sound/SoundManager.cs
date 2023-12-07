@@ -6,6 +6,8 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     private static AudioSource _audioSource;
+    [SerializeField] AudioClip _sheepClip;
+    [SerializeField] AudioClip _goatClip;
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
